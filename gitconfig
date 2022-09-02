@@ -13,6 +13,15 @@
   co = checkout
   pf = push --force-with-lease
   st = status
+
+  # https://stackoverflow.com/a/18317425
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
+
+  template = !cp -r "$HOME/.git_template/*" "$(git rev-parse --show-toplevel)/.git"
+[hub]
+  protocol = ssh
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input

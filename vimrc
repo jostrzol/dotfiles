@@ -1,9 +1,26 @@
+" Set incompatible with original vi for more usability
+set nocompatible
+
+" Encoding
 set encoding=utf-8
 
 " Leader
 let mapleader = " "
 
-set backspace=2   " Backspace deletes like most programs in insert mode
+" Set escape timeout
+:set timeout timeoutlen=150 ttimeout ttimeoutlen=150
+
+" Map Y to yank till end of line
+map Y y$
+
+" Bar cursor in insert mode
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[2 q"
+
+" General settings
+set backspace=indent,eol,start
+set hlsearch
+
 set nobackup
 set nowritebackup
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
@@ -16,12 +33,16 @@ set autowrite     " Automatically :write before running commands
 set modelines=0   " Disable modelines as a security precaution
 set nomodeline
 
+" Enable mouse handling
+set mouse=a
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+" Source bundles
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -105,8 +126,8 @@ if executable('ag')
 endif
 
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+"set textwidth=80
+"set colorcolumn=+1
 
 " Numbers
 set number
@@ -178,6 +199,129 @@ set complete+=kspell
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+" We need this for plugins like Syntastic and vim-gitgutter which put symbols
+" in the sign column.
+hi clear SignColumn
+
+" ----- Plugin-Specific Settings --------------------------------------
+
+" " ----- altercation/vim-colors-solarized settings -----
+" " Toggle this to "light" for light colorscheme
+" set background=dark
+"
+" " Uncomment the next line if your terminal is not configured for solarized
+" let g:solarized_termcolors=256
+"
+" " Set the colorscheme
+" colorscheme solarized
+
+
+" Fancy arrow symbols, requires a patched font
+" To install a patched font, run over to
+"     https://github.com/abertsch/Menlo-for-Powerline
+" download all the .ttf files, double-click on them and click "Install"
+" Finally, uncomment the next line
+let g:airline_powerline_fonts = 1
+
+" Show PASTE if in paste mode
+let g:airline_detect_paste=1
+
+" Show airline for tabs too
+let g:airline#extensions#tabline#enabled = 1
+
+" Use the solarized theme for the Airline status bar
+let g:airline_theme='solarized'
+
+" ----- jistr/vim-nerdtree-tabs -----
+" Open/close NERDTree Tabs with \g
+nmap <silent> <leader>g :NERDTreeTabsToggle<CR>
+" To have NERDTree always open on startup
+"let g:nerdtree_tabs_open_on_console_startup = 1
+
+
+" ----- scrooloose/syntastic settings -----
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+augroup mySyntastic
+  au!
+  au FileType tex let b:syntastic_mode = "passive"
+augroup END
+
+
+" ----- xolox/vim-easytags settings -----
+" Where to look for tags files
+set tags=./tags;,~/.vimtags
+" Sensible defaults
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
+
+" ----- majutsushi/tagbar settings -----
+" Open/close tagbar with \b
+nmap <silent> <leader>b :TagbarToggle<CR>
+" Uncomment to open tagbar automatically whenever possible
+"autocmd BufEnter * nested :call tagbar#autoopen(0)
+
+
+" ----- airblade/vim-gitgutter settings -----
+" In vim-airline, only display "hunks" if the diff is non-zero
+let g:airline#extensions#hunks#non_zero_only = 1
+
+
+" ----- Raimondi/delimitMate settings -----
+let delimitMate_expand_cr = 1
+augroup mydelimitMate
+  au!
+  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType tex let b:delimitMate_quotes = ""
+  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+augroup END
+
+" ----- jez/vim-superman settings -----
+" better man page support
+noremap K :SuperMan <cword><CR>
+
+" Redir https://gist.github.com/romainl/eae0a260ab9c135390c30cd370c20cd7
+function! Redir(cmd, rng, start, end)
+  for win in range(1, winnr('$'))
+    if getwinvar(win, 'scratch')
+      execute win . 'windo close'
+    endif
+  endfor
+  if a:cmd =~ '^!'
+    let cmd = a:cmd =~' %'
+      \ ? matchstr(substitute(a:cmd, ' %', ' ' . shellescape(escape(expand('%:p'), '\')), ''), '^!\zs.*')
+      \ : matchstr(a:cmd, '^!\zs.*')
+    if a:rng == 0
+      let output = systemlist(cmd)
+    else
+      let joined_lines = join(getline(a:start, a:end), '\n')
+      let cleaned_lines = substitute(shellescape(joined_lines), "'\\\\''", "\\\\'", 'g')
+      let output = systemlist(cmd . " <<< $" . cleaned_lines)
+    endif
+  else
+    redir => output
+    execute a:cmd
+    redir END
+    let output = split(output, "\n")
+  endif
+  vnew
+  let w:scratch = 1
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile
+  call setline(1, output)
+endfunction
+
+" This command definition includes -bar, so that it is possible to "chain" Vim commands.
+" Side effect: double quotes can't be used in external commands
+command! -nargs=1 -complete=command -bar -range Redir silent call Redir(<q-args>, <range>, <line1>, <line2>)
+
+" This command definition doesn't include -bar, so that it is possible to use double quotes in external commands.
+" Side effect: Vim commands can't be "chained".
+command! -nargs=1 -complete=command -range Redir silent call Redir(<q-args>, <range>, <line1>, <line2>)
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

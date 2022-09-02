@@ -13,4 +13,7 @@ fi
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
 
+# local
+PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+
 export -U PATH
