@@ -8,7 +8,7 @@ set encoding=utf-8
 let mapleader = " "
 
 " Set escape timeout
-:set timeout timeoutlen=150 ttimeout ttimeoutlen=150
+:set timeout timeoutlen=250 ttimeout ttimeoutlen=250
 
 " Map Y to yank till end of line
 map Y y$
