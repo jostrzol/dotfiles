@@ -1,4 +1,5 @@
 # same as git checkout, but autocomplete only branches with current ticket in name
+
 gcoh() {
   git checkout "$@"
 }

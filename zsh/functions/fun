@@ -1,8 +1,25 @@
 # make/edit a zsh function/completion
+
 fun() {
+
   if [ "$1" = "-c" ]; then
-    vi ~/dotfiles/zsh/completion/"$2" && funrel "$2"
+    mode="completion"
+    template="new-zsh-fun-completion"
+    shift
   else
-    vi ~/dotfiles/zsh/functions/"$1"
+    mode="functions"
+    template="new-zsh-fun"
   fi
+
+  file="$HOME/dotfiles/zsh/$mode/$1"
+
+  local -a options
+  options=("-c" "set filetype=sh")
+  if ! [ -e "$file" ]; then
+    options=($options "-c" "let g:tmpl_project = \"${1##_}\"" "-c" ":TemplateInit $template")
+  fi
+
+  vi "$file" $options
+
+  [ "$mode" = completion ] && funrel "$1"
 }
