@@ -13,6 +13,11 @@ let mapleader = " "
 " Map Y to yank till end of line
 map Y y$
 
+" Map option+backspace/arrows to work for whole words
+inoremap <Esc><BS> <C-w>
+inoremap <Esc>b <C-o>b
+inoremap <Esc>f <C-o>e
+
 " Bar cursor in insert mode
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[2 q"
