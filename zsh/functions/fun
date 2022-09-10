@@ -1,0 +1,8 @@
+# make/edit a zsh function/completion
+fun() {
+  if [ "$1" = "-c" ]; then
+    vi ~/dotfiles/zsh/completion/"$2"
+  else
+    vi ~/dotfiles/zsh/functions/"$1"
+  fi
+}

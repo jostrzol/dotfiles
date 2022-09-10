@@ -1,0 +1,6 @@
+# reload function's autocompletion
+
+funrel() {
+  unfunction "$1"
+  autoload -U "$1"
+}

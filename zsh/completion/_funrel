@@ -1,0 +1,3 @@
+#compdef funrel
+
+_files -W "$HOME/dotfiles/zsh/completion"
