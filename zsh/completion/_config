@@ -1,5 +1,3 @@
 #compdef config
 
-local -a configs
-configs=( $(find $HOME/dotfiles/ -path '*/.*' -o -path '*.md' -o -path '*/LICENSE' -o -path '*/bin/*' -prune -o -type file -print) )
-_values 'config files' ${configs##$HOME/dotfiles//}
+_files -W "$HOME/dotfiles" -F "(*.md LICENSE bin)"

@@ -1,3 +1,4 @@
+# easily configure something in a dotfile
 config() {
   vi "$HOME/dotfiles/$1"
 }
