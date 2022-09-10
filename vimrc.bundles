@@ -93,6 +93,8 @@ Plug 'digitaltoad/vim-jade'
 Plug 'tpope/vim-liquid'
 " Autocompletion
 Plug 'ycm-core/YouCompleteMe'
+" Templates
+Plug 'tibabit/vim-templates'
 
 " TODO: see
 " ag.vim

@@ -292,6 +292,9 @@ augroup END
 " better man page support
 noremap K :SuperMan <cword><CR>
 
+" ----- tibabit/vim-templates settings -----
+let g:tmpl_search_paths = ['~/dotfiles/vim-templates']
+
 " Redir https://gist.github.com/romainl/eae0a260ab9c135390c30cd370c20cd7
 function! Redir(cmd, rng, start, end)
   for win in range(1, winnr('$'))
