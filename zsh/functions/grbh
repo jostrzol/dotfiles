@@ -1,0 +1,5 @@
+# git rebase, but autocomplete only branches with current ticket in name
+
+grbh() {
+  git rebase "$@"
+}
