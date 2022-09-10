@@ -13,6 +13,7 @@
   co = checkout
   pf = push --force-with-lease
   st = status
+  ticket = !git branch --show-current | cut -d '-' -f '1-2'
 
   # https://stackoverflow.com/a/18317425
   ignore = update-index --assume-unchanged
