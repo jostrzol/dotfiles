@@ -74,6 +74,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jez/vim-c0'
 Plug 'jez/vim-ispc'
 Plug 'kchmck/vim-coffee-script'
+Plug 'udalov/kotlin-vim'
 
 "" ---- Extras/Advanced plugins ----------------------------------------
 " Highlight and strip trailing whitespace
