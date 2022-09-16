@@ -84,6 +84,7 @@ plugins=(
   fzf-tab
   git-open
   gradle
+  sudo
 )
 
 source $ZSH/oh-my-zsh.sh

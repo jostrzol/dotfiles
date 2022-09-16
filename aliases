@@ -27,6 +27,8 @@ alias idea="'/Applications/IntelliJ IDEA.app/Contents/MacOS/idea'"
 alias detekt="./gradlew detekt -i"
 alias ktlint-format="./gradlew ktlintFormat"
 
+# Copy to clipboard
+alias xclip="xclip -sel clip"
 
 # Include custom aliases
 if [[ -f ~/.aliases.local ]]; then
