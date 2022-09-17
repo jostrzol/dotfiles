@@ -26,9 +26,7 @@ let &t_EI = "\e[2 q"
 set backspace=indent,eol,start
 set hlsearch
 
-set nobackup
-set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set updatetime=100
 set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
@@ -89,7 +87,6 @@ augroup ale
 
   if g:has_async
     autocmd VimEnter *
-      \ set updatetime=1000 |
       \ let g:ale_lint_on_text_changed = 0
     autocmd CursorHold * call ale#Queue(0)
     autocmd CursorHoldI * call ale#Queue(0)
@@ -331,6 +328,10 @@ command! -nargs=1 -complete=command -bar -range Redir silent call Redir(<q-args>
 " This command definition doesn't include -bar, so that it is possible to use double quotes in external commands.
 " Side effect: Vim commands can't be "chained".
 command! -nargs=1 -complete=command -range Redir silent call Redir(<q-args>, <range>, <line1>, <line2>)
+
+" Alias for glog
+command! Glog Git log --oneline --decorate --graph
+command! Gloga Git log --oneline --decorate --graph --all
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
