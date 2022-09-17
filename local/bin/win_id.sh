@@ -7,7 +7,6 @@ fi
 
 get_win_id() {
   wmctrl -lp | while read -r id _ pid _; do
-    command="$()"
     if ps -o comm= --pid "$pid" | grep -q "$@"; then
       echo "$id"
       return
@@ -20,4 +19,4 @@ if [ -z "$win_id" ]; then
   exit 2
 fi
 
-wmctrl -ia "$win_id"
+echo "$win_id"
