@@ -36,6 +36,11 @@ set autowrite     " Automatically :write before running commands
 set modelines=0   " Disable modelines as a security precaution
 set nomodeline
 
+" Save swap, backup and undo files in a special location <https://stackoverflow.com/a/15317146>
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 " Enable mouse handling
 set mouse=a
 
