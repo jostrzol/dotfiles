@@ -37,6 +37,12 @@ set modelines=0   " Disable modelines as a security precaution
 set nomodeline
 
 " Save swap, backup and undo files in a special location <https://stackoverflow.com/a/15317146>
+for dir in ["backup", "swap", "undo"]
+  let dirpath = expand("~/.vim/" . dir)
+  if !isdirectory(dirpath)
+    call mkdir(dirpath, "p")
+  endif
+endfor
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
