@@ -4,8 +4,8 @@ set nocompatible
 " Encoding
 set encoding=utf-8
 
-" Leader
-let mapleader = " "
+" Leader to F3
+let mapleader = "\<F3>"
 
 " Set escape timeout
 :set timeout timeoutlen=500 ttimeout ttimeoutlen=500

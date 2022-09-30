@@ -25,83 +25,92 @@ else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 endif
 
-Plug 'junegunn/fzf.vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'fatih/vim-go'
-Plug 'janko-m/vim-test'
-Plug 'pangloss/vim-javascript'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/tComment'
 
 " ----- Making Vim look good ------------------------------------------
-"Plug 'altercation/vim-colors-solarized'
 Plug 'ericbn/vim-solarized'
-Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Make tmux look like vim-airline (read README for extra instructions)
+Plug 'edkolev/tmuxline.vim'
 
-"  " ----- Vim as a programmer's text editor -----------------------------
+" ----- Navigation ----------------------------------------------------
+" Directory navigator
 Plug 'scrooloose/nerdtree'
+" Directory navigator as an (more) independent tab
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'vim-syntastic/syntastic'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
-Plug 'majutsushi/tagbar'
-Plug 'ctrlpvim/ctrlp.vim'
+" Directory navigator git status
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" Fuzzy finder
+Plug 'junegunn/fzf.vim'
+" Jump to thing under cursor
+Plug 'pechorin/any-jump.vim'
+" Jump between header and source file
 Plug 'vim-scripts/a.vim'
 
-"" ----- Working with Git ----------------------------------------------
+" ----- Tag plugins ---------------------------------------------------
+" Automatically generate tags
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+" Tab for viewing tags
+Plug 'majutsushi/tagbar'
+
+" ----- Vim as a programmer's text editor -----------------------------
+" Autocompletion
+Plug 'ycm-core/YouCompleteMe'
+" Easily run tests
+Plug 'janko-m/vim-test'
+" Easily comment sections of code
+Plug 'vim-scripts/tComment'
+" Easily surround chunks of text
+Plug 'tpope/vim-surround'
+" Autimatically insert the closing keywords (e.g. if -> fi)
+Plug 'tpope/vim-endwise'
+" Automatically insert the closing HTML tag
+Plug 'vim-scripts/HTML-AutoCloseTag'
+
+" ----- Working with Git ----------------------------------------------
+" Support for git humps
 Plug 'airblade/vim-gitgutter'
+" Support for git
 Plug 'tpope/vim-fugitive'
+" Support for GitHub
+Plug 'tpope/vim-rhubarb'
 
 " ----- Other text editing features -----------------------------------
+" Auto closing
 Plug 'Raimondi/delimitMate'
 
 "" ----- man pages, tmux -----------------------------------------------
 Plug 'jez/vim-superman'
 Plug 'christoomey/vim-tmux-navigator'
 
-" ----- Syntax plugins ------------------------------------------------
-Plug 'jez/vim-c0'
-Plug 'jez/vim-ispc'
-Plug 'kchmck/vim-coffee-script'
+" ----- Language plugins -----------------------------------------------
 Plug 'udalov/kotlin-vim'
+Plug 'fatih/vim-go'
+Plug 'pangloss/vim-javascript'
+Plug 'ekalinin/Dockerfile.vim'
 
-"" ---- Extras/Advanced plugins ----------------------------------------
+" ----- Shell plugins --------------------------------------------------
+" Zsh syntax highlighting in vim
+Plug 'zsh-users/zsh-syntax-highlighting'
+" Shell utilities from inside of vim
+Plug 'tpope/vim-eunuch'
+
+" ----- Extras/Advanced plugins ----------------------------------------
 " Highlight and strip trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
-" Easily surround chunks of text
-Plug 'tpope/vim-surround'
 " Align CSV files at commas, align Markdown tables, and more
 Plug 'godlygeek/tabular'
-" Automaticall insert the closing HTML tag
-Plug 'vim-scripts/HTML-AutoCloseTag'
-" Make tmux look like vim-airline (read README for extra instructions)
-Plug 'edkolev/tmuxline.vim'
-" All the other syntax plugins I use
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'digitaltoad/vim-jade'
-Plug 'tpope/vim-liquid'
-" Autocompletion
-Plug 'ycm-core/YouCompleteMe'
+" Don't complain on writing to inexistant dirs
+Plug 'pbrisbin/vim-mkdir'
+" Dunno, sth with syntax, but README is very sparse
+Plug 'slim-template/vim-slim'
+" Navigating though projects
+Plug 'tpope/vim-projectionist'
+" Repeat (.) works for plugin commands
+Plug 'tpope/vim-repeat'
 " Templates
 Plug 'tibabit/vim-templates'
-
-" TODO: see
-" ag.vim
-" ack.vim
-" silver searcher
-" any jump
 
 
 if g:has_async
