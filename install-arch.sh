@@ -49,6 +49,7 @@ set \
   zsh-users/zsh-syntax-highlighting \
   Aloxaf/fzf-tab \
   paulirish/git-open \
+  tmux-plugin-manager-git \
 
 # download the plugins
 for plugin in "$@"; do
