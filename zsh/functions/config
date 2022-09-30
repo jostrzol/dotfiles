@@ -1,4 +1,13 @@
 # easily configure something in a dotfile
 config() {
-  vi "$HOME/dotfiles/$1"
+  local directory
+
+  if [ "$1" = "-l" ]; then
+    directory='dotfiles-local'
+    shift
+  else
+    directory='dotfiles'
+  fi
+
+  vi "$HOME/$directory/$1"
 }

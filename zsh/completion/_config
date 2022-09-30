@@ -1,3 +1,16 @@
 #compdef config
 
-_files -W "$HOME/dotfiles" -F "(*.md LICENSE bin)"
+_arguments -A '-*' '-l[configure local dotfiles]:local:->local'
+
+local directory
+
+case "$state" in
+  local)
+    directory="dotfiles-local"
+    ;;
+  "")
+    directory="dotfiles"
+    ;;
+esac
+
+_files -W "$HOME/$directory" -F "(*.md LICENSE bin)"

@@ -1,32 +1,5 @@
 #compdef fun
 
-#local -a directory
-#if [ "$1" = "-c" ]; then
-#  directory="$HOME/dotfiles/zsh/completion"
-#  shift
-#else
-#  directory="$HOME/dotfiles/zsh/functions"
-#fi
-#
-#local -a configs
-#configs=( $(find "$directory" -type file) )
-#_values 'functions' ${configs##$directory/}
-
-# local -a subcmds topics
-# subcmds=('c:description for c command' 'd:description for d command')
-# topics=('e:description for e help topic' 'f:description for f help topic')
-# _describe 'command' subcmds -- topics
-
-# _alternative 'arguments:custom arg:(a b c)' 'files:filename:_files'
-
-# _alternative \
-#   "dirs:user directory:($userdirs)" \
-#   "pids:process ID:($(ps -A o pid=))"
-
-# _alternative \
-#  "directories:user directory:($userdirs)" \
-#  'options:comma-separated opt: _values -s , letter a b c'
-
 _arguments '-c[configure autocompletion]:completion:->completion'
 
 case "$state" in
