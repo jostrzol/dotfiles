@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# initialize submodules
+git submodule update --init --recursive --remote
+
 # ensure sudo is installed
 if ! [ -x /usr/bin/sudo ]; then
   echo >&2 "sudo is required for the installation"
