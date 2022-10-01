@@ -4,14 +4,14 @@ set nocompatible
 " Encoding
 set encoding=utf-8
 
-" Leader to F3
-let mapleader = "\<F3>"
+" Leader to backtick
+let mapleader = "`"
 
 " Set escape timeout
 :set timeout timeoutlen=500 ttimeout ttimeoutlen=500
 
 " Map Y to yank till end of line
-map Y y$
+nnoremap Y y$
 
 " Map option+backspace/arrows to work for whole words
 inoremap <Esc><BS> <C-w>
