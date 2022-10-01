@@ -1,12 +1,20 @@
 #compdef fun
 
-_arguments '-c[configure autocompletion]:completion:->completion'
+local context state state_descr line
+typeset -A opt_args
 
-case "$state" in
-  completion)
-    _files -W "$HOME/dotfiles/zsh/completion"
-    ;;
-  "")
-    _files -W "$HOME/dotfiles/zsh/functions"
-    ;;
-esac
+_arguments -A '-*' \
+  '-l[configure local dotfiles]:local:->local' \
+  '-c[configure autocompletion]:completion:->completion'
+
+directory="dotfiles"
+mode="functions"
+
+for option (${(k)opt_args}); do
+  case "$option" in
+    -l) directory="dotfiles-local" ;;
+    -c) mode="completion" ;;
+  esac
+done
+
+_files -W "$HOME/$directory/zsh/$mode"
