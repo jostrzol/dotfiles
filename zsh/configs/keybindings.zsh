@@ -1,6 +1,9 @@
 # give us access to ^Q
 stty -ixon
 
+# reduce esc timeout to 10ms
+KEYTIMEOUT=1
+
 # vi mode
 bindkey -v
 bindkey "^F" vi-cmd-mode

@@ -8,15 +8,19 @@ set encoding=utf-8
 let mapleader = "`"
 
 " Set escape timeout
-:set timeout timeoutlen=500 ttimeout ttimeoutlen=500
+set timeout timeoutlen=1000 ttimeout ttimeoutlen=5
 
 " Map Y to yank till end of line
 nnoremap Y y$
 
+" TODO: fix:
+" uncommented will slow ESC to timeoutlen instead of ttimeoutlen
+" find a way to avoid it
+"
 " Map option+backspace/arrows to work for whole words
-inoremap <Esc><BS> <C-w>
-inoremap <Esc>[1;5D <C-o>b
-inoremap <Esc>[1;5C <C-o>e
+" inoremap <Esc><BS> <C-w>
+" inoremap <Esc>[1;5D <C-o>b
+" inoremap <Esc>[1;5C <C-o>e
 
 " Bar cursor in insert mode
 let &t_SI = "\e[5 q"
