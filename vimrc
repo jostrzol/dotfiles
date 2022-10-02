@@ -206,8 +206,10 @@ nnoremap <C-l> <C-w>l
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
 
-" Map Ctrl + p to open fuzzy find (FZF)
+" Map Ctrl + p to FZF files
 nnoremap <c-p> :Files<cr>
+" Map Alt + p to FZF buffers
+nnoremap <Esc>p :Buffers<cr>
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
@@ -256,6 +258,8 @@ let g:airline_theme='solarized'
 nmap <silent> <leader>g :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startup
 "let g:nerdtree_tabs_open_on_console_startup = 1
+" File filters
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '__pycache__']
 
 
 " ----- scrooloose/syntastic settings -----
@@ -347,6 +351,9 @@ command! -nargs=1 -complete=command -range Redir silent call Redir(<q-args>, <ra
 " Alias for glog
 command! Glog Git log --oneline --decorate --graph
 command! Gloga Git log --oneline --decorate --graph --all
+
+" Alias for reloading config
+command! Reload source ~/.vimrc
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
