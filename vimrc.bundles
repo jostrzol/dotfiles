@@ -46,6 +46,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'pechorin/any-jump.vim'
 " Jump between header and source file
 Plug 'vim-scripts/a.vim'
+" Navigating though projects
+Plug 'tpope/vim-projectionist'
 
 " ----- Tag plugins ---------------------------------------------------
 " Automatically generate tags
@@ -105,8 +107,6 @@ Plug 'godlygeek/tabular'
 Plug 'pbrisbin/vim-mkdir'
 " Dunno, sth with syntax, but README is very sparse
 Plug 'slim-template/vim-slim'
-" Navigating though projects
-Plug 'tpope/vim-projectionist'
 " Repeat (.) works for plugin commands
 Plug 'tpope/vim-repeat'
 " Templates
