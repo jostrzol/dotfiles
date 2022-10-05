@@ -27,7 +27,7 @@ endif
 
 
 " ----- Making Vim look good ------------------------------------------
-Plug 'ericbn/vim-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Make tmux look like vim-airline (read README for extra instructions)
