@@ -69,6 +69,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 " Automatically insert the closing HTML tag
 Plug 'vim-scripts/HTML-AutoCloseTag'
+" Syntax highlighting
+Plug 'sheerun/vim-polyglot'
 
 " ----- Working with Git ----------------------------------------------
 " Support for git humps
