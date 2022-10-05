@@ -26,19 +26,34 @@ nnoremap Y y$
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[2 q"
 
-" General settings
-set backspace=indent,eol,start
-set hlsearch
+" Tab settings
+set expandtab       " Enter spaces when tab is pressed
+set textwidth=120   " Break lines when line length passes this threshold
+set tabstop=2       " Use 2 spaces to represent tab
+set softtabstop=2
+set shiftround      " Round indent to multiple of 'shiftwidth'
+set shiftwidth=2    " Number of spaces to use for autoindent
+set autoindent      " Copy indent from currenct line when starting a new line
+set nojoinspaces    " Use one space, not two, after punctuation.
 
+" Make backspace more powerfull
+set backspace=indent,eol,start
+
+" General settings
 set updatetime=100
 set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-set modelines=0   " Disable modelines as a security precaution
+set ruler           " Show the cursor position all the time
+set showcmd         " Display incomplete commands
+set incsearch       " Do incremental searching
+set laststatus=2    " Always display the status line
+set autowrite       " Automatically :write before running commands
+set hlsearch        " Highlight searches
+set modelines=0     " Disable modelines as a security precaution
+set undofile        " Remember undo history between sessions
 set nomodeline
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
 " Save swap, backup and undo files in a special location <https://stackoverflow.com/a/15317146>
 for dir in ["backup", "swap", "undo"]
@@ -115,18 +130,6 @@ augroup END
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
-
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
-
-" Use one space, not two, after punctuation.
-set nojoinspaces
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -259,7 +262,7 @@ nmap <silent> <leader>g :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startup
 "let g:nerdtree_tabs_open_on_console_startup = 1
 " File filters
-let NERDTreeIgnore = ['\.pyc$', '\.o$', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '__pycache__', 'tags']
 
 
 " ----- scrooloose/syntastic settings -----
@@ -279,7 +282,7 @@ let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
 let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
+
 
 " ----- majutsushi/tagbar settings -----
 " Open/close tagbar with \b
