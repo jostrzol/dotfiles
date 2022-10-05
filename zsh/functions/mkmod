@@ -1,0 +1,7 @@
+# initialize a python module
+
+mkmod() {
+  module_path="$1"
+  mkdir "$module_path" && touch "$module_path/__init__.py"
+}
+
