@@ -111,22 +111,6 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile vimrc.local set filetype=vim
 augroup END
 
-" ALE linting events
-augroup ale
-  autocmd!
-
-  if g:has_async
-    autocmd VimEnter *
-      \ let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Queue(0)
-    autocmd CursorHoldI * call ale#Queue(0)
-    autocmd InsertEnter * call ale#Queue(0)
-    autocmd InsertLeave * call ale#Queue(0)
-  else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-  endif
-augroup END
-
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
@@ -190,10 +174,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Move between linting errors
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
-
 " Map Ctrl + p to FZF files
 nnoremap <c-p> :Files<cr>
 " Map Alt + p to FZF buffers
@@ -213,7 +193,7 @@ set diffopt+=vertical
 " in the sign column.
 hi clear SignColumn
 
-" ----- Plugin-Specific Settings --------------------------------------
+" ===== Plugin-Specific Settings ======================================
 
 " ----- altercation/vim-colors-solarized settings -----
 " Toggle this to "light" for light colorscheme
@@ -436,23 +416,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Adapt to solarized theme
-function! CocNvimHighlight()
-  highlight CocErrorHighlight ctermfg=Red  guifg=#ff0000
-  highlight CocWarningHighlight ctermfg=Red  guifg=#ff0000
-  highlight CocInfoHighlight ctermfg=Red  guifg=#ff0000
-  highlight CocHintHighlight ctermfg=Red  guifg=#ff0000
-  highlight CocErrorLine ctermfg=Red  guifg=#ff0000
-  highlight CocWarningLine ctermfg=Red  guifg=#ff0000
-  highlight CocInfoLine ctermfg=Red  guifg=#ff0000
-  highlight CocHintLine ctermfg=Red  guifg=#ff0000
-
-  highlight CocHighlightText  guibg=#111111 ctermbg=223
-endfunction
-
-autocmd VimEnter function CocNvimHighlight()
-
-" ----- Custom commands, aliases --------------------------------------
+" ===== Custom commands, aliases ======================================
 
 " Redir https://gist.github.com/romainl/eae0a260ab9c135390c30cd370c20cd7
 function! Redir(cmd, rng, start, end)

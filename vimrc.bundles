@@ -115,10 +115,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tibabit/vim-templates'
 
 
-if g:has_async
-  Plug 'dense-analysis/ale'
-endif
-
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
