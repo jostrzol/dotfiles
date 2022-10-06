@@ -42,8 +42,6 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " Fuzzy finder
 Plug 'junegunn/fzf.vim'
-" Jump to thing under cursor
-Plug 'pechorin/any-jump.vim'
 " Jump between header and source file
 Plug 'vim-scripts/a.vim'
 " Navigating though projects
