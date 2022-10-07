@@ -62,7 +62,10 @@ for dir in ["backup", "swap", "undo"]
     call mkdir(dirpath, "p")
   endif
 endfor
-set backupdir=~/.vim/backup//
+" disable backup because of issue with COC: https://github.com/neoclide/coc.nvim/issues/649
+" set backupdir=~/.vim/backup//
+set nobackup
+set nowritebackup
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
