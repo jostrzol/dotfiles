@@ -29,6 +29,7 @@ let &t_EI = "\e[2 q"
 " Tab settings
 set expandtab       " Enter spaces when tab is pressed
 set textwidth=120   " Break lines when line length passes this threshold
+set colorcolumn=+1  " Highlight last column
 set tabstop=2       " Use 2 spaces to represent tab
 set softtabstop=2
 set shiftround      " Round indent to multiple of 'shiftwidth'
@@ -112,6 +113,9 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile gitconfig.local set filetype=gitconfig
   autocmd BufRead,BufNewFile tmux.conf.local set filetype=tmux
   autocmd BufRead,BufNewFile vimrc.local set filetype=vim
+
+  " Set textwidth for specific file types
+  autocmd BufRead,BufNewFile *.py setlocal textwidth=80
 augroup END
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
