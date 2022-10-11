@@ -9,5 +9,9 @@ config() {
     directory='dotfiles'
   fi
 
-  vi "$HOME/$directory/$1"
+  if [ -n "$1" ]; then
+    (cd "$HOME/$directory" && vi "$HOME/$directory/$1")
+  else
+    cd "$HOME/$directory"
+  fi
 }
