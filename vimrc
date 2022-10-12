@@ -284,6 +284,16 @@ noremap K :SuperMan <cword><CR>
 let g:tmpl_search_paths = ['~/dotfiles/vim-templates']
 
 " ----- neoclide/coc.nvim settings -----
+" Automatically install these extensions
+let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-sh',
+      \ 'coc-tsserver',
+      \ 'coc-diagnostic',
+      \ ]
+" TODO: check out:
+" * 'coc-git'
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
