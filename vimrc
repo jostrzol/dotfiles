@@ -419,11 +419,8 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " Map alt+f to format and organize imports of the current buffer
-nnoremap <silent><Esc>f :call CocActionAsync('runCommand', 'editor.action.organizeImport', function('FormatCallback'))<cr>
-
-function! FormatCallback(error, response)
-  call CocActionAsync('format')
-endfunction
+nnoremap <silent><Esc>f :call CocActionAsync('runCommand', 'editor.action.organizeImport',
+      \ {error, response -> CocActionAsync('format')})<cr>
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
