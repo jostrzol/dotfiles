@@ -296,6 +296,13 @@ let g:coc_global_extensions = [
 " TODO: check out:
 " * 'coc-git'
 
+" TODO: think of something more like in VSCode
+" (so that cursor stops on the last occurence, not the next)
+" HINT: https://github.com/neoclide/coc.nvim/wiki/Multiple-cursors-support
+" Map ctrl+s to make new cursors
+nnoremap <silent> <C-s> <Plug>(coc-cursors-word)*:nohlsearch<CR>
+xnoremap <silent> <C-s> y/\V<C-r>=escape(@",'/\')<CR><CR>NgN<Plug>(coc-cursors-range)n:nohlsearch<CR>gn
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
@@ -397,11 +404,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
