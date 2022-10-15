@@ -92,6 +92,7 @@ Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'lervag/vimtex'
+Plug 'neovimhaskell/haskell-vim'
 
 " ----- Shell plugins --------------------------------------------------
 " Zsh syntax highlighting in vim
