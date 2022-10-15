@@ -91,6 +91,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'lervag/vimtex'
 
 " ----- Shell plugins --------------------------------------------------
 " Zsh syntax highlighting in vim

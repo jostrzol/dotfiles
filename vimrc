@@ -286,11 +286,13 @@ let g:tmpl_search_paths = ['~/dotfiles/vim-templates']
 " ----- neoclide/coc.nvim settings -----
 " Automatically install these extensions
 let g:coc_global_extensions = [
-      \ 'coc-json',
-      \ 'coc-sh',
-      \ 'coc-tsserver',
-      \ 'coc-diagnostic',
-      \ ]
+  \ 'coc-json',
+  \ 'coc-sh',
+  \ 'coc-tsserver',
+  \ 'coc-diagnostic',
+  \ 'coc-vimlsp',
+  \ 'coc-vimtex'
+  \ ]
 " TODO: check out:
 " * 'coc-git'
 
@@ -439,6 +441,25 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" ===== lervag/vimtex config ==========================================
+let g:vimtex_compiler_method = 'tectonic'
+
+let g:vimtex_view_general_viewer = 'sumatraPDF.exe'
+let g:vimtex_view_general_options = '-reuse-instance @pdf'
+
+let g:vimtex_compiler_tectonic = {
+  \ 'build_dir' : './build',
+  \ 'options' : [
+  \   '--keep-logs',
+  \   '--synctex'
+  \ ],
+  \}
+
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Underfull',
+      \ 'Overfull',
+      \]
 
 " ===== Custom commands, aliases ======================================
 

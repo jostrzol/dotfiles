@@ -1,5 +1,6 @@
 {
   "languageserver": {
+    // ----- haskell ----------------------------------------------------------
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": [
@@ -25,6 +26,7 @@
         }
       }
     },
+    // ----- prolog -----------------------------------------------------------
     "prolog-lsp": {
       "command": "swipl",
       "args": [
@@ -39,6 +41,17 @@
       ],
       "filetypes": [
         "prolog"
+      ]
+  // ----- diagnostic languageserver ------------------------------------------
+  "diagnostic-languageserver.mergeConfig": true,
+  "diagnostic-languageserver.formatters": {
+    "latexindent": {
+      "command": "latexindent",
+      "args": [
+        "-m",
+        "-y",
+        "defaultIndent:'  '",
+        "--cruft=./build"
       ]
     }
   },
@@ -62,6 +75,12 @@
     "lua": "lua-format",
     // "sh": "shfmt",
     "blade": "blade-formatter",
-    "cmake": "cmake-format"
-  }
+    "cmake": "cmake-format",
+    "latex": "latexindent"
+  },
+  // ----- latex --------------------------------------------------------------
+  "coc.source.vimtex.filetypes": [
+    "tex",
+    "plaintex"
+  ]
 }
