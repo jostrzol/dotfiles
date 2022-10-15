@@ -419,9 +419,9 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " Map alt+f to format and organize imports of the current buffer
-nnoremap <Esc>f :call CocActionAsync('runCommand', 'editor.action.organizeImport', function('_format_callback'))<cr>
+nnoremap <silent><Esc>f :call CocActionAsync('runCommand', 'editor.action.organizeImport', function('FormatCallback'))<cr>
 
-function! _format_callback(error, response)
+function! FormatCallback(error, response)
   call CocActionAsync('format')
 endfunction
 
