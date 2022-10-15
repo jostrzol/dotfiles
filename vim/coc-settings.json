@@ -42,6 +42,10 @@
       "filetypes": [
         "prolog"
       ]
+    },
+  },
+  // ----- python -------------------------------------------------------------
+  "python.linting.flake8Enabled": true,
   // ----- diagnostic languageserver ------------------------------------------
   "diagnostic-languageserver.mergeConfig": true,
   "diagnostic-languageserver.formatters": {
