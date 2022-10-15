@@ -53,6 +53,10 @@ set modelines=0     " Disable modelines as a security precaution
 set undofile        " Remember undo history between sessions
 set nomodeline
 
+" Search settings
+set ignorecase      " Ignore case in search patterns
+set smartcase       " Don't ignore case if upper case in search
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
