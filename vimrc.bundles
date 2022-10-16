@@ -113,6 +113,8 @@ Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-repeat'
 " Templates
 Plug 'tibabit/vim-templates'
+" Swap pieces of text
+Plug 'tommcdo/vim-exchange'
 
 
 if filereadable(expand("~/.vimrc.bundles.local"))
