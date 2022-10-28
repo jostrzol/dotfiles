@@ -236,7 +236,20 @@ nmap <silent> <leader>g :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startup
 "let g:nerdtree_tabs_open_on_console_startup = 1
 " File filters
-let NERDTreeIgnore = ['\.pyc$', '\.o$', '__pycache__', 'tags']
+let NERDTreeIgnore = [
+  "\ Python files
+  \ '\.pyc$',
+  \ '^__pycache__$[[dir]]',
+  "\ Gradle files
+  \ '^gradlew$',
+  \ '^gradlew.bat',
+  \ '^gradle$[[dir]]',
+  \ '^bin$[[dir]]',
+  \ '^build$[[dir]]',
+  "\ Misc files
+  \ '\.o$',
+  \ '^tags$',
+  \ ]
 
 
 " ----- scrooloose/syntastic settings -----

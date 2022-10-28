@@ -59,6 +59,8 @@ Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
+" Debugging
+Plug 'puremourning/vimspector'
 " Easily run tests
 Plug 'janko-m/vim-test'
 " Easily comment sections of code

@@ -17,14 +17,14 @@
         "hs",
         "lhs",
         "haskell"
-      ],
-      "initializationOptions": {
-        "languageServerHaskell": {
-          "hlintOn": true,
-          "maxNumberOfProblems": 10,
-          "completionSnippetsOn": true
-        }
-      }
+      ]//,
+      // "initializationOptions": {
+      //   "languageServerHaskell": {
+      //     "hlintOn": true,
+      //     "maxNumberOfProblems": 10,
+      //     "completionSnippetsOn": true
+      //   }
+      // }
     },
     // ----- prolog -----------------------------------------------------------
     "prolog-lsp": {
@@ -75,7 +75,8 @@
     "php": ["phpstan", "psalm"],
     "yaml": [ "yamllint" ],
     "cmake": [ "cmake-lint", "cmakelint" ],
-    "systemd": "systemd-analyze"
+    "systemd": "systemd-analyze",
+    "haskell": "hlint"
   },
   "diagnostic-languageserver.formatFiletypes": {
     "dart": "dartfmt",
