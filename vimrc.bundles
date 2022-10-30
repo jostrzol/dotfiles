@@ -57,6 +57,8 @@ Plug 'majutsushi/tagbar'
 " ----- Vim as a programmer's text editor -----------------------------
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Multiple cursors
+Plug 'terryma/vim-multiple-cursors'
 " Easily run tests
 Plug 'janko-m/vim-test'
 " Easily comment sections of code
