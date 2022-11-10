@@ -7,3 +7,6 @@ setopt extendedglob
 
 # Allow [ or ] whereever you want
 unsetopt nomatch
+
+# Disable bell
+setopt nobeep
