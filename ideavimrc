@@ -1,7 +1,37 @@
-let mapleader=`
+let mapleader='`'
+
+set ignorecase
+set smartcase
+
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tommcdo/vim-exchange'
 
+nmap gcc :action CommentByLineComment<CR>
+vmap gc :action CommentByLineComment<CR>
+
+nnoremap Y y$
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+nnoremap <c-w> :action CloseEditor<CR>
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gy :action GotoTypeDeclaration<CR>
+nnoremap gi :action ReSharperGotoImplementation<CR>
+
+nnoremap [g :action GotoPreviousError<CR>
+nnoremap ]g :action GotoNextError<CR>
+nnoremap [c :action VcsShowPrevChangeMarker<CR>
+nnoremap ]c :action VcsShowNextChangeMarker<CR>
+
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
+
+nnoremap <a-f> :action ReformatCode<CR>
+nnoremap <a-o> :action OptimizeImports<CR>
