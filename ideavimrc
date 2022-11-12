@@ -2,6 +2,9 @@ let mapleader='`'
 
 set ignorecase
 set smartcase
+set scrolloff=5
+set incsearch
+set visualbell
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
