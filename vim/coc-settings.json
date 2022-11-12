@@ -84,7 +84,7 @@
     "eelixir": "mix_format",
     "python": ["black", "isort"],
     "lua": "lua-format",
-    // "sh": "shfmt",
+    "sh": "shfmt",
     "blade": "blade-formatter",
     "cmake": "cmake-format",
     "latex": "latexindent"
