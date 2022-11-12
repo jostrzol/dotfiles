@@ -26,7 +26,7 @@ nnoremap <c-w> :action CloseEditor<CR>
 
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gy :action GotoTypeDeclaration<CR>
-nnoremap gi :action ReSharperGotoImplementation<CR>
+nnoremap gi :action ReSharperGotoImplementation<CR> :action GotoImplementation<CR>
 
 nnoremap [g :action GotoPreviousError<CR>
 nnoremap ]g :action GotoNextError<CR>
