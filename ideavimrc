@@ -38,3 +38,6 @@ nnoremap <s-TAB> :action PreviousTab<CR>
 
 nnoremap <a-f> :action ReformatCode<CR>
 nnoremap <a-o> :action OptimizeImports<CR>
+nnoremap <a-m> :action Refactorings.QuickListPopupAction<CR>
+
+nnoremap <c-p> :action SearchEverywhere<CR>
