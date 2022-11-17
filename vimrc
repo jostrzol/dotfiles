@@ -185,6 +185,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+"This unsets the "last search pattern" register by hitting return
+nnoremap <silent><CR> :noh<CR><CR>
+
 " Map Ctrl + p to FZF files
 nnoremap <c-p> :Files<cr>
 " Map Alt + p to FZF buffers
