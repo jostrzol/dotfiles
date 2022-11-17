@@ -43,6 +43,7 @@ set backspace=indent,eol,start
 " General settings
 set updatetime=100
 set history=50
+set scrolloff=5     " Minimal distance from cursor to edge of screen
 set ruler           " Show the cursor position all the time
 set showcmd         " Display incomplete commands
 set incsearch       " Do incremental searching
