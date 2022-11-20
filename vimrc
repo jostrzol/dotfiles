@@ -118,9 +118,6 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile gitconfig.local set filetype=gitconfig
   autocmd BufRead,BufNewFile tmux.conf.local set filetype=tmux
   autocmd BufRead,BufNewFile vimrc.local set filetype=vim
-
-  " Set textwidth for specific file types
-  autocmd BufRead,BufNewFile *.py setlocal textwidth=80
 augroup END
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
