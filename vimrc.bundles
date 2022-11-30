@@ -86,7 +86,7 @@ Plug 'tpope/vim-rhubarb'
 " Auto closing
 Plug 'Raimondi/delimitMate'
 
-"" ----- man pages, tmux -----------------------------------------------
+" ----- man pages, tmux -----------------------------------------------
 Plug 'jez/vim-superman'
 Plug 'christoomey/vim-tmux-navigator'
 
