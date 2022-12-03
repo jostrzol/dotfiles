@@ -140,10 +140,6 @@ if executable('ag')
   nnoremap \ :Ag<CR>
 endif
 
-" Make it obvious where 80 characters is
-"set textwidth=80
-"set colorcolumn=+1
-
 " Numbers
 set number
 set numberwidth=5
@@ -232,8 +228,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='solarized'
 
 " ----- jistr/vim-nerdtree-tabs -----
-" Open/close NERDTree Tabs with \g
-nmap <silent> <leader>g :NERDTreeTabsToggle<CR>
+" Open/close NERDTree Tabs with ,m
+nmap <silent> ,m :NERDTreeTabsToggle<CR>
+" Reveal file in tree with ,n
+nmap <silent> ,n :NERDTreeFind<CR>
+
 " To have NERDTree always open on startup
 "let g:nerdtree_tabs_open_on_console_startup = 1
 " File filters
