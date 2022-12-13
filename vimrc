@@ -6,6 +6,8 @@ set encoding=utf-8
 
 " Leader to backtick
 let mapleader = "`"
+" LocalLeader to equals
+let maplocalleader = "="
 
 " Set escape timeout
 set timeout timeoutlen=1000 ttimeout ttimeoutlen=5
@@ -226,6 +228,22 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Use the solarized theme for the Airline status bar
 let g:airline_theme='solarized'
+
+" ----- puremourning/vimspector -----
+" Human mappings (see https://github.com/puremourning/vimspector#human-mode)
+let g:vimspector_enable_mappings = 'HUMAN'
+
+" Balloon eval
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
+
+" Navigating stack
+nmap <LocalLeader><F11> <Plug>VimspectorUpFrame
+nmap <LocalLeader><F12> <Plug>VimspectorDownFrame
+nmap <LocalLeader>B     <Plug>VimspectorBreakpoints
+nmap <LocalLeader>D     <Plug>VimspectorDisassemble
 
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with ,m
