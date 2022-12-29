@@ -181,8 +181,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-"This unsets the "last search pattern" register by hitting return
-nnoremap <silent><CR> :noh<CR><CR>
+" This unsets the "last search pattern" register by hitting return and resets GitGutter indicators
+nnoremap <silent><CR> :noh<CR> :GitGutter<CR><CR>
 
 " Map Ctrl + p to FZF files
 nnoremap <c-p> :Files<cr>
