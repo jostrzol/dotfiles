@@ -85,6 +85,8 @@ Plug 'tpope/vim-rhubarb'
 " ----- Other text editing features -----------------------------------
 " Auto closing
 Plug 'Raimondi/delimitMate'
+" %S substitution and more
+Plug 'tpope/vim-abolish'
 
 " ----- man pages, tmux -----------------------------------------------
 Plug 'jez/vim-superman'
