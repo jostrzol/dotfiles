@@ -266,7 +266,7 @@ let NERDTreeIgnore = [
   \ '^build$[[dir]]',
   "\ Misc files
   \ '\.o$',
-  \ '^tags$',
+  \ '^tags$[[file]]',
   \ ]
 
 
