@@ -63,6 +63,10 @@
         "defaultIndent:'  '",
         "--cruft=./build"
       ]
+    },
+    "black": {
+      "command": "black",
+      "args": ["--quiet", "--experimental-string-processing", "-"]
     }
   },
   "diagnostic-languageserver.filetypes": {
