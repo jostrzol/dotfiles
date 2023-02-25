@@ -1,0 +1,157 @@
+{
+  "languageserver": {
+    // ----- haskell ----------------------------------------------------------
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": [
+        "--lsp"
+      ],
+      "rootPatterns": [
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml"
+      ],
+      "filetypes": [
+        "hs",
+        "lhs",
+        "haskell"
+      ] //,
+      // "initializationOptions": {
+      //   "languageServerHaskell": {
+      //     "hlintOn": true,
+      //     "maxNumberOfProblems": 10,
+      //     "completionSnippetsOn": true
+      //   }
+      // }
+    },
+    // ----- prolog -----------------------------------------------------------
+    "prolog-lsp": {
+      "command": "swipl",
+      "args": [
+        "-g",
+        "use_module(library(lsp_server)).",
+        "-g",
+        "lsp_server:main",
+        "-t",
+        "halt",
+        "--",
+        "stdio"
+      ],
+      "filetypes": [
+        "prolog"
+      ]
+    },
+    // ----- C# ---------------------------------------------------------------
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": [
+        "cs"
+      ],
+      "rootPatterns": [
+        "*.csproj",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ]
+    },
+    // ----- gopls ------------------------------------------------------------
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    },
+  },
+  // ----- python -------------------------------------------------------------
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=88",
+    "--ignore=E203"
+  ],
+  // ----- diagnostic languageserver ------------------------------------------
+  "diagnostic-languageserver.mergeConfig": true,
+  "diagnostic-languageserver.formatters": {
+    "latexindent": {
+      "command": "latexindent",
+      "args": [
+        "-m",
+        "-y",
+        "defaultIndent:'  '",
+        "--cruft=./build"
+      ]
+    },
+    "black": {
+      "command": "black",
+      "args": [
+        "--quiet",
+        "--experimental-string-processing",
+        "-"
+      ]
+    }
+  },
+  "diagnostic-languageserver.filetypes": {
+    "vim": "vint",
+    "email": "languagetool",
+    "markdown": [
+      "write-good",
+      "markdownlint"
+    ],
+    // "sh": "shellcheck",
+    "elixir": [
+      "mix_credo",
+      "mix_credo_compile"
+    ],
+    "eelixir": [
+      "mix_credo",
+      "mix_credo_compile"
+    ],
+    "php": [
+      "phpstan",
+      "psalm"
+    ],
+    "yaml": [
+      "yamllint"
+    ],
+    "cmake": [
+      "cmake-lint",
+      "cmakelint"
+    ],
+    "systemd": "systemd-analyze",
+    "haskell": "hlint"
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "dart": "dartfmt",
+    "elixir": "mix_format",
+    "eelixir": "mix_format",
+    "python": [
+      "black",
+      "isort"
+    ],
+    "lua": "lua-format",
+    "sh": "shfmt",
+    "blade": "blade-formatter",
+    "cmake": "cmake-format",
+    "latex": "latexindent"
+  },
+  // ----- go -----------------------------------------------------------------
+  // "go.goplsOptions": {
+  //   "gofumpt": true
+  // },
+  // ----- latex --------------------------------------------------------------
+  "coc.source.vimtex.filetypes": [
+    "tex",
+    "plaintex"
+  ],
+  "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/tuco-arch/.config/coc/extensions/coc-lombok-data/server/lombok.jar\""
+}
