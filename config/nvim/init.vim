@@ -563,4 +563,4 @@ command! Glog Git log --oneline --decorate --graph
 command! Gloga Git log --oneline --decorate --graph --all
 
 " Alias for reloading config
-command! Reload source stdpath("config") . "/init.vim"
+command! Reload exec 'source' stdpath("config") . "/init.vim"
