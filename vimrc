@@ -30,7 +30,7 @@ let &t_EI = "\e[2 q"
 
 " Tab settings
 set expandtab       " Enter spaces when tab is pressed
-set textwidth=120   " Break lines when line length passes this threshold
+set textwidth=100   " Break lines when line length passes this threshold
 set colorcolumn=+1  " Highlight last column
 set tabstop=2       " Use 2 spaces to represent tab
 set softtabstop=2
