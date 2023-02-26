@@ -490,15 +490,33 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 
 " ===== fatih/vim-go ==================================================
-let g:go_list_type = "quickfix"
+" use external daemon (must start manually, for some reason remote=auto
+" doesn't work)
+let g:go_gopls_options = ["-remote=unix;/tmp/gopls-daemon-socket"]
 
-let g:go_disable_autoinstall = 0
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+" disable mappings from vim-go, use coc-go mappings instead
+let g:go_doc_keywordprg_enabled = 0
+let g:go_def_mapping_enabled = 0
+
+" disable all linters as that is taken care of by coc.nvim
+let g:go_diagnostics_enabled = 0
+let g:go_metalinter_enabled = []
+
+" don't jump to errors after metalinter is invoked
+let g:go_jump_to_error = 0
+
+" run go imports on file save
 let g:go_fmt_command = "goimports"
+
+" syntax highlighting
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
 
 " ===== lervag/vimtex config ==========================================
 let g:vimtex_compiler_method = 'tectonic'

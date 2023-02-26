@@ -1,4 +1,10 @@
 {
+  // ----- general ------------------------------------------------------------
+  "suggest.noselect": false,
+  "diagnostic.errorSign": "⛔",
+  "diagnostic.warningSign": "❓",
+  "diagnostic.infoSign": "💡",
+  "diagnostic.checkCurrentLine": true,
   "languageserver": {
     // ----- haskell ----------------------------------------------------------
     "haskell": {
@@ -56,23 +62,9 @@
         ".hg/"
       ]
     },
-    // ----- gopls ------------------------------------------------------------
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "filetypes": [
-        "go"
-      ],
-      "initializationOptions": {
-        "usePlaceholders": true
-      }
-    },
   },
+  // ----- go -----------------------------------------------------------------
+  "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket"],
   // ----- python -------------------------------------------------------------
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Args": [
