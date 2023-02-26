@@ -62,10 +62,31 @@
         ".hg/"
       ]
     },
+    // ----- golangci ---------------------------------------------------------
+    "golangci-lint-languageserver": {
+      "command": "golangci-lint-langserver",
+      "filetypes": [
+        "go"
+      ],
+      "initializationOptions": {
+        "command": [
+          "golangci-lint",
+          "run",
+          "-D",
+          "errcheck",
+          "-E",
+          "revive,godot",
+          "--out-format",
+          "json"
+        ]
+      }
+    }
   },
   // ----- go -----------------------------------------------------------------
   "go.goplsPath": "~/go/bin/gopls",
-  "go.goplsArgs": ["-remote=auto"],
+  "go.goplsArgs": [
+    "-remote=auto"
+  ],
   // ----- python -------------------------------------------------------------
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Args": [
