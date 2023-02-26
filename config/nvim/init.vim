@@ -490,9 +490,19 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 
 " ===== fatih/vim-go ==================================================
-" use external daemon (must start manually, for some reason remote=auto
-" doesn't work)
-let g:go_gopls_options = ["-remote=unix;/tmp/gopls-daemon-socket"]
+" There are troubles for this to work on WSL: -remote=auto expects
+" systemd to create /run/user/$uid folder, but on WSL 1.0.3 it didn't work.
+"
+" Steps to fix:
+" 1. Upgrade WSL to 1.1.0+ (https://askubuntu.com/a/1442827)
+"   a. Try: wsl.exe --update && wsl.exe --version
+"   b. If doesn't work then download .msixbundle from https://github.com/microsoft/WSL/releases/tag/1.1.0
+"      and install using: Add-AppxPackage {FILE}
+" 2. Enable systemd user linger: sudo loginctl enable-linger {USERNAME} (https://github.com/microsoft/WSL/issues/8842)
+" 3. wsl.exe --shutdown
+"
+" Now --remote=auto should work again
+let g:go_gopls_options = ["-remote=auto"]
 
 " disable mappings from vim-go, use coc-go mappings instead
 let g:go_doc_keywordprg_enabled = 0

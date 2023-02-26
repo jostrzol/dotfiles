@@ -64,7 +64,8 @@
     },
   },
   // ----- go -----------------------------------------------------------------
-  "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket"],
+  "go.goplsPath": "~/go/bin/gopls",
+  "go.goplsArgs": ["-remote=auto"],
   // ----- python -------------------------------------------------------------
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Args": [
