@@ -215,8 +215,10 @@ nnoremap <silent> <Leader>gt :TestVisit<CR>
 set background=dark
 
 " Set the colorscheme
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_better_performance = 1
 set termguicolors
-colorscheme solarized8
+colorscheme gruvbox-material
 
 " Fancy arrow symbols, requires a patched font
 " To install a patched font, run over to
@@ -232,7 +234,7 @@ let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled = 1
 
 " Use the solarized theme for the Airline status bar
-let g:airline_theme='solarized'
+let g:airline_theme='base16_gruvbox_dark_hard'
 
 " ----- puremourning/vimspector -----
 " Human mappings (see https://github.com/puremourning/vimspector#human-mode)
@@ -274,6 +276,8 @@ let NERDTreeIgnore = [
   \ '^tags$[[file]]',
   \ ]
 
+" nerdtree-git section
+let g:NERDTreeGitStatusUseNerdFonts = 1
 
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = '✘'

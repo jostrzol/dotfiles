@@ -3,6 +3,9 @@ let g:has_async = v:version >= 800 || has('nvim')
 call plug#begin('~/.vim/bundle')
 
 " ----- Making Vim look good ------------------------------------------
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -19,6 +22,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 " Directory navigator git status
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" Directory icons for NERDTREE and more
+Plug 'ryanoasis/vim-devicons'
 " Jump between header and source file
 Plug 'vim-scripts/a.vim'
 " Navigating though projects
