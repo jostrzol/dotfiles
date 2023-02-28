@@ -28,6 +28,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-scripts/a.vim'
 " Navigating though projects
 Plug 'tpope/vim-projectionist'
+" Delete buffers without exit
+Plug 'qpkorr/vim-bufkill'
 
 " ----- Tag plugins ---------------------------------------------------
 " Automatically generate tags
