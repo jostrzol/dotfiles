@@ -596,3 +596,19 @@ command! Gloga Git log --oneline --decorate --graph --all
 
 " Alias for reloading config
 command! Reload exec 'source' stdpath("config") . "/init.vim"
+
+" Build go cmd
+function! GoBuildCmd()
+  let output = system("go list -f '{{.Name}} {{.ImportPath}}' ./...")
+  for line in split(output, "\n")
+    let [package, importpath] = split(line, " ")
+    if package == "main"
+      exec "GoBuild" importpath
+    endif
+  endfor
+endfunction
+
+" Aliast for vim-go
+command! GoBuildCmd call GoBuildCmd()
+command! GoBuildAll exec 'GoBuild' getcwd() . "/..."
+command! GoTestAll exec 'GoTest' getcwd() . "/..."
