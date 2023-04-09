@@ -80,7 +80,14 @@
           "json"
         ]
       }
-    }
+    },
+    // ----- wgsl shaders -----------------------------------------------------
+    "wgsl": {
+      "command": "wgsl_analyzer",
+      "filetypes": [
+        "wgsl"
+      ],
+    },
   },
   // ----- rust ---------------------------------------------------------------
   "rust-analyzer.server.path": "/usr/bin/rust-analyzer",

@@ -83,6 +83,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'lervag/vimtex'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'DingDean/wgsl.vim'
 
 " ----- Shell plugins --------------------------------------------------
 " Zsh syntax highlighting in vim
