@@ -119,10 +119,10 @@
   "diagnostic-languageserver.filetypes": {
     "vim": "vint",
     "email": "languagetool",
-    "markdown": [
-      "write-good",
-      "markdownlint"
-    ],
+    // "markdown": [
+    //   "write-good",
+    //   "markdownlint"
+    // ],
     // "sh": "shellcheck",
     "elixir": [
       "mix_credo",
