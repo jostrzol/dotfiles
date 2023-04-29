@@ -349,8 +349,7 @@ nnoremap <silent> <C-s> <Plug>(coc-cursors-word)*:nohlsearch<CR>
 xnoremap <silent> <C-s> y/\V<C-r>=escape(@",'/\')<CR><CR>NgN<Plug>(coc-cursors-range)n:nohlsearch<CR>gn
 
 " Make <Tab> to accept selected completion item
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<Tab>"
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
 
 " Make <CR> notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
