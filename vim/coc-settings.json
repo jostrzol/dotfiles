@@ -144,6 +144,9 @@
         "--experimental-string-processing",
         "-"
       ]
+    },
+    "hclfmt": {
+      "command": "hclfmt",
     }
   },
   "diagnostic-languageserver.filetypes": {
@@ -188,7 +191,8 @@
     "sh": "shfmt",
     "blade": "blade-formatter",
     "cmake": "cmake-format",
-    "latex": "latexindent"
+    "latex": "latexindent",
+    "hcl": "hclfmt",
   },
   // ----- latex --------------------------------------------------------------
   "coc.source.vimtex.filetypes": [
