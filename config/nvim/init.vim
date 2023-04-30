@@ -125,6 +125,7 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile tmux.conf.local set filetype=tmux
   autocmd BufRead,BufNewFile vimrc.local set filetype=vim
   autocmd BufRead,BufNewFile *.wgsl set filetype=wgsl
+  autocmd BufRead,BufNewFile Justfile set filetype=just
 augroup END
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
