@@ -584,6 +584,10 @@ function! Redir(cmd, rng, start, end)
   call setline(1, output)
 endfunction
 
+" Close all buffers but he selected one
+" See: https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment86214068_42071865
+command! BufOnly silent! execute "%bd|e#|bd#"
+
 " This command definition includes -bar, so that it is possible to "chain" Vim commands.
 " Side effect: double quotes can't be used in external commands
 command! -nargs=1 -complete=command -bar -range Redir silent call Redir(<q-args>, <range>, <line1>, <line2>)
