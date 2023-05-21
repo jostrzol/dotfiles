@@ -255,6 +255,8 @@ nmap <LocalLeader>B     <Plug>VimspectorBreakpoints
 nmap <LocalLeader>D     <Plug>VimspectorDisassemble
 
 " ----- jistr/vim-nerdtree-tabs -----
+let NERDTreeMinimalUI=1
+let NERDTreeMinimalMenu=1
 " Open/close NERDTree Tabs with ,m
 nmap <silent> ,m :NERDTreeTabsToggle<CR>
 " Reveal file in tree with ,n
