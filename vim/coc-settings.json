@@ -141,7 +141,7 @@
       "command": "black",
       "args": [
         "--quiet",
-        "--experimental-string-processing",
+        "--preview",
         "-"
       ]
     },
