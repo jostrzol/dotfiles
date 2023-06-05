@@ -125,6 +125,10 @@
     "--max-line-length=88",
     "--ignore=E203"
   ],
+  // ----- markdown -----------------------------------------------------------
+  "markdownlint.config": {
+    "MD013": false
+  },
   // ----- diagnostic languageserver ------------------------------------------
   "diagnostic-languageserver.mergeConfig": true,
   "diagnostic-languageserver.formatters": {
