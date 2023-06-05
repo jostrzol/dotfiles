@@ -67,6 +67,9 @@ set smartcase       " Don't ignore case if upper case in search
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
+" make <C-a> work for letters
+set nrformats+=alpha
+
 " Save swap, backup and undo files in a special location <https://stackoverflow.com/a/15317146>
 for dir in ["backup", "swap", "undo"]
   let dirpath = expand(stdpath("config") . dir)
