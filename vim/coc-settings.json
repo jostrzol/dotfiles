@@ -151,7 +151,13 @@
     },
     "hclfmt": {
       "command": "hclfmt",
-    }
+    },
+    "mdformat": {
+      "command": "mdformat",
+      "args": [
+        "-"
+      ]
+    },
   },
   "diagnostic-languageserver.filetypes": {
     "vim": "vint",
@@ -181,7 +187,7 @@
       "cmakelint"
     ],
     "systemd": "systemd-analyze",
-    "haskell": "hlint"
+    "haskell": "hlint",
   },
   "diagnostic-languageserver.formatFiletypes": {
     "dart": "dartfmt",
@@ -197,6 +203,7 @@
     "cmake": "cmake-format",
     "latex": "latexindent",
     "hcl": "hclfmt",
+    "markdown": "mdformat",
   },
   // ----- latex --------------------------------------------------------------
   "coc.source.vimtex.filetypes": [
