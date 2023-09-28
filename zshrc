@@ -3,6 +3,7 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] \
   && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -z "$NOTMUX" ] \
   && [ -z "$INTELLIJ_ENVIRONMENT_READER" ] \
   && [ "$__CFBundleIdentifier" != "com.jetbrains.intellij" ] \
+  && [ -z "$SSH_CONNECTION" ] \
   && [ "$TERM_PROGRAM" != "vscode" ]
 then
   exec tmux
