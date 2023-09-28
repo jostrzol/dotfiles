@@ -608,6 +608,9 @@ command! Gloga Git log --oneline --decorate --graph --all
 " Alias for reloading config
 command! Reload exec 'source' stdpath("config") . "/init.vim"
 
+" Alias for restarting, keeping the current file open
+command! Restart exec '!echo' expand("%") expand(">/tmp/nvim-restart-$PPID") | cq 70
+
 " Build go cmd
 function! GoBuildCmd()
   let output = system("go list -f '{{.Name}} {{.ImportPath}}' ./...")
