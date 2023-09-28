@@ -56,7 +56,11 @@ Plug 'tpope/vim-endwise'
 " Automatically insert the closing HTML tag
 Plug 'vim-scripts/HTML-AutoCloseTag'
 " Syntax highlighting
-Plug 'sheerun/vim-polyglot'
+Plug 'jostrzol/vim-polyglot' "my fork; original: 'sheerun/vim-polyglot'
+" Search (and replace) across multiple files easily
+Plug 'brooth/far.vim'
+" Some pairwise navigation mappings (e.g. [c for :cprevious)
+Plug 'tpope/vim-unimpaired'
 
 " ----- Working with Git ----------------------------------------------
 " Support for git humps
