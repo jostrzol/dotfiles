@@ -110,5 +110,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tibabit/vim-templates'
 " Swap pieces of text
 Plug 'tommcdo/vim-exchange'
+" Preview hex colors
+Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()

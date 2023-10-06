@@ -554,9 +554,17 @@ let g:vimtex_compiler_tectonic = {
   \}
 
 let g:vimtex_quickfix_ignore_filters = [
-      \ 'Underfull',
-      \ 'Overfull',
-      \]
+  \ 'Underfull',
+  \ 'Overfull',
+  \]
+
+" ===== norcalli/nvim-colorizer config ================================
+lua require'colorizer'.setup {
+  \ 'css';
+  \ 'javascript';
+  \ 'typescript';
+  \ 'html'
+  \}
 
 " ===== Custom commands, aliases ======================================
 " Redir https://gist.github.com/romainl/eae0a260ab9c135390c30cd370c20cd7
