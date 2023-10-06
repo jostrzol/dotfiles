@@ -85,6 +85,7 @@ plugins=(
   git-open
   gradle
   sudo
+  colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh
