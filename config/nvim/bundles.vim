@@ -72,7 +72,7 @@ Plug 'tpope/vim-rhubarb'
 
 " ----- Other text editing features -----------------------------------
 " Auto closing
-Plug 'Raimondi/delimitMate'
+Plug 'windwp/nvim-autopairs'
 " %S substitution and more
 Plug 'tpope/vim-abolish'
 
@@ -114,3 +114,16 @@ Plug 'tommcdo/vim-exchange'
 Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
+
+" Lua plugins setup
+
+lua << EOF
+require("nvim-autopairs").setup {}
+require("colorizer").setup {
+  "javascript";
+  "javascriptreact";
+  "typescript";
+  "typescriptreact";
+  "css";
+  "html"
+}

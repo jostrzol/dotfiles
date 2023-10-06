@@ -43,9 +43,6 @@ set shiftwidth=2    " Number of spaces to use for autoindent
 set autoindent      " Copy indent from currenct line when starting a new line
 set nojoinspaces    " Use one space, not two, after punctuation.
 
-" Make backspace more powerfull
-set backspace=indent,eol,start
-
 " General settings
 set updatetime=100
 set history=50
@@ -64,11 +61,11 @@ set nomodeline
 set ignorecase      " Ignore case in search patterns
 set smartcase       " Don't ignore case if upper case in search
 
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
-
-" make <C-a> work for letters
-set nrformats+=alpha
+" Misc
+set backspace=indent,eol,start            " Make backspace more powerfull
+set termguicolors                         " Enable 24-bit color mode
+set list listchars=tab:»·,trail:·,nbsp:·  " Display extra whitespace
+set nrformats+=alpha                      " make <C-a> work for letters
 
 " Save swap, backup and undo files in a special location <https://stackoverflow.com/a/15317146>
 for dir in ["backup", "swap", "undo"]
@@ -222,7 +219,6 @@ set background=dark
 " Set the colorscheme
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_better_performance = 1
-set termguicolors
 colorscheme gruvbox-material
 
 " Fancy arrow symbols, requires a patched font
@@ -557,14 +553,6 @@ let g:vimtex_quickfix_ignore_filters = [
   \ 'Underfull',
   \ 'Overfull',
   \]
-
-" ===== norcalli/nvim-colorizer config ================================
-lua require'colorizer'.setup {
-  \ 'css';
-  \ 'javascript';
-  \ 'typescript';
-  \ 'html'
-  \}
 
 " ===== Custom commands, aliases ======================================
 " Redir https://gist.github.com/romainl/eae0a260ab9c135390c30cd370c20cd7
