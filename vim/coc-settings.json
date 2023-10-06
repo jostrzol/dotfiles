@@ -210,4 +210,6 @@
     "tex",
     "plaintex"
   ],
+  // ----- typescript ---------------------------------------------------------
+  "typescript.format.semicolons": "insert",
 }
