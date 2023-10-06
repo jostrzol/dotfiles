@@ -204,6 +204,12 @@
     "latex": "latexindent",
     "hcl": "hclfmt",
     "markdown": "mdformat",
+    "javascript": "prettier",
+    "javascriptreact": "prettier",
+    "typescript": "prettier",
+    "typescriptreact": "prettier",
+    "css": "prettier",
+    "html": "prettier",
   },
   // ----- latex --------------------------------------------------------------
   "coc.source.vimtex.filetypes": [
@@ -211,5 +217,7 @@
     "plaintex"
   ],
   // ----- typescript ---------------------------------------------------------
-  "typescript.format.semicolons": "insert",
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
+  "css.format.enable": false,
 }
