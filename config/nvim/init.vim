@@ -183,6 +183,9 @@ nnoremap <C-l> <C-w>l
 " This unsets the "last search pattern" register by hitting return and resets GitGutter indicators
 nnoremap <silent><CR> :noh<CR> :GitGutter<CR><CR>
 
+" Start writing substitute command with the word under the cursor
+vnoremap <Leader>s "0y :%s/<C-R>0/
+
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
