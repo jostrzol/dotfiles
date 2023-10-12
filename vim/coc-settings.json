@@ -95,8 +95,6 @@
         "command": [
           "golangci-lint",
           "run",
-          "-D",
-          "errcheck",
           "-E",
           "revive,godot",
           "--out-format",
