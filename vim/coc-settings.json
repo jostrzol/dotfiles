@@ -130,15 +130,6 @@
   // ----- diagnostic languageserver ------------------------------------------
   "diagnostic-languageserver.mergeConfig": true,
   "diagnostic-languageserver.formatters": {
-    "latexindent": {
-      "command": "latexindent",
-      "args": [
-        "-m",
-        "-y",
-        "defaultIndent:'  '",
-        "--cruft=./build"
-      ]
-    },
     "black": {
       "command": "black",
       "args": [
@@ -199,7 +190,6 @@
     "sh": "shfmt",
     "blade": "blade-formatter",
     "cmake": "cmake-format",
-    "latex": "latexindent",
     "hcl": "hclfmt",
     "markdown": "mdformat",
     "javascript": "prettier",
@@ -210,10 +200,6 @@
     "html": "prettier",
   },
   // ----- latex --------------------------------------------------------------
-  "coc.source.vimtex.filetypes": [
-    "tex",
-    "plaintex"
-  ],
   // ----- typescript ---------------------------------------------------------
   "typescript.format.enable": false,
   "javascript.format.enable": false,

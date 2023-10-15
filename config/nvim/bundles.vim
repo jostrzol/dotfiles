@@ -88,6 +88,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'lervag/vimtex'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'DingDean/wgsl.vim'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 " ----- Shell plugins --------------------------------------------------
 " Zsh syntax highlighting in vim
