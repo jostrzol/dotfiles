@@ -16,6 +16,9 @@ PATH="$HOME/.cargo/bin:$PATH"
 # go packages
 PATH="$HOME/go/bin:$PATH"
 
+# yarn packages
+PATH="$HOME/.yarn/bin:$PATH"
+
 # dotfiles
 PATH="$HOME/.bin:$PATH"
 
