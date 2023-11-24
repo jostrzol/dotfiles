@@ -86,6 +86,7 @@ plugins=(
   gradle
   sudo
   colored-man-pages
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh

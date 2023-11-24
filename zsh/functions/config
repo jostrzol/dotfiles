@@ -10,7 +10,7 @@ config() {
   fi
 
   if [ -n "$1" ]; then
-    (cd "$HOME/$directory" && vi "$HOME/$directory/$1")
+    (cd "$HOME/$directory" && "$VISUAL" "$HOME/$directory/$1")
   else
     cd "$HOME/$directory"
   fi

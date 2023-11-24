@@ -21,7 +21,6 @@ set \
   cmake \
   python \
   npm \
-  java17-openjfx \
 
 # install the packages
 sudo pacman -Sy "$@"
@@ -39,6 +38,7 @@ fi
 # packages to install through yay
 set \
   rcm \
+  tmux-plugin-manager \
 
 # install the packages
 yay -Sy "$@"
@@ -52,7 +52,6 @@ set \
   zsh-users/zsh-syntax-highlighting \
   Aloxaf/fzf-tab \
   paulirish/git-open \
-  tmux-plugin-manager-git \
 
 # download the plugins
 for plugin in "$@"; do
@@ -61,12 +60,6 @@ for plugin in "$@"; do
       git clone "https://github.com/$plugin"
   )
 done
-
-# compile YouCompleteMe
-(
-  cd "~/.vim/bundle/YouCompleteMe" && \
-    python3 install.py --all
-)
 
 # install dotfiles
 env RCRC=$HOME/dotfiles/rcrc rcup

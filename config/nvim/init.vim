@@ -280,6 +280,7 @@ let NERDTreeIgnore = [
   "\ Misc files
   \ '\.o$',
   \ '^tags$[[file]]',
+  \ '^node_modules$',
   \ ]
 
 " nerdtree-git section
