@@ -35,7 +35,7 @@ fun() {
     options=($options "-c" "let g:tmpl_project = \"${1##_}\"" "-c" ":TemplateInit $template")
   fi
 
-  vi "$file" $options
+  $EDITOR "$file" $options
 
   [ "$mode" = completion ] && funrel "$1"
 }
