@@ -54,5 +54,3 @@ _load_settings "$HOME/.zsh/configs"
 
 # z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

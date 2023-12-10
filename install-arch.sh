@@ -21,6 +21,7 @@ set \
   cmake \
   python \
   npm \
+  z \
 
 # install the packages
 sudo pacman -Sy "$@"
