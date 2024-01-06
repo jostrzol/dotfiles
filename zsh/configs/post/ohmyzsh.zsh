@@ -87,6 +87,7 @@ plugins=(
   sudo
   colored-man-pages
   kubectl
+  golang
 )
 
 source $ZSH/oh-my-zsh.sh
