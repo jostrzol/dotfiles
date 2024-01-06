@@ -5,6 +5,7 @@ alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
 alias vi="nvim"
+alias j="just"
 
 # Pacman
 alias pacman-sizes='expac "%n %m" -l"\n" -Q $(pacman -Qq) | sort -rhk 2 | numfmt --to=iec-i --field=2 --format="%.3f" | less'
