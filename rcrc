@@ -1,4 +1,4 @@
-EXCLUDES="*.md LICENSE tags node_modules"
+EXCLUDES="*.md LICENSE tags node_modules config/nvim"
 DOTFILES_DIRS="$HOME/dotfiles-local $HOME/dotfiles"
 COPY_ALWAYS="git_template/HEAD"
 SYMLINK_DIRS="config/fish config/lvim"

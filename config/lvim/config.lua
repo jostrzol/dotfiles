@@ -12,4 +12,10 @@ lvim.plugins = {
   --   end
   -- },
   { "mg979/vim-visual-multi" },
+  { "tpope/vim-surround" },
+  { "qpkorr/vim-bufkill" },
 }
+
+lvim.keys.normal_mode["]c"] = "<Cmd>lua require 'gitsigns'.nav_hunk('next', {navigation_message = false})<CR>"
+lvim.keys.normal_mode["[c"] = "<Cmd>lua require 'gitsigns'.nav_hunk('prev', {navigation_message = false})<CR>"
+lvim.keys.normal_mode["<Leader><Leader>"] = "<C-6>"

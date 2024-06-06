@@ -203,318 +203,318 @@ set diffopt+=vertical
 " in the sign column.
 hi clear SignColumn
 
-" ===== Plugin-Specific Settings ======================================
+" " ===== Plugin-Specific Settings ======================================
 
-" ----- altercation/vim-colors-solarized settings -----
-" Toggle this to "light" for light colorscheme
-set background=dark
+" " ----- altercation/vim-colors-solarized settings -----
+" " Toggle this to "light" for light colorscheme
+" set background=dark
 
-" Set the colorscheme
+" " Set the colorscheme
 set termguicolors
-colorscheme solarized8
+" colorscheme solarized8
 
-" Fancy arrow symbols, requires a patched font
-" To install a patched font, run over to
-"     https://github.com/abertsch/Menlo-for-Powerline
-" download all the .ttf files, double-click on them and click "Install"
-" Finally, uncomment the next line
-let g:airline_powerline_fonts = 1
+" " Fancy arrow symbols, requires a patched font
+" " To install a patched font, run over to
+" "     https://github.com/abertsch/Menlo-for-Powerline
+" " download all the .ttf files, double-click on them and click "Install"
+" " Finally, uncomment the next line
+" let g:airline_powerline_fonts = 1
 
-" Show PASTE if in paste mode
-let g:airline_detect_paste=1
+" " Show PASTE if in paste mode
+" let g:airline_detect_paste=1
 
-" Show airline for tabs too
-let g:airline#extensions#tabline#enabled = 1
+" " Show airline for tabs too
+" let g:airline#extensions#tabline#enabled = 1
 
-" Use the solarized theme for the Airline status bar
-let g:airline_theme='solarized'
+" " Use the solarized theme for the Airline status bar
+" let g:airline_theme='solarized'
 
-" ----- puremourning/vimspector -----
-" Human mappings (see https://github.com/puremourning/vimspector#human-mode)
-let g:vimspector_enable_mappings = 'HUMAN'
+" " ----- puremourning/vimspector -----
+" " Human mappings (see https://github.com/puremourning/vimspector#human-mode)
+" let g:vimspector_enable_mappings = 'HUMAN'
 
-" Balloon eval
-" for normal mode - the word under the cursor
-nmap <Leader>di <Plug>VimspectorBalloonEval
-" for visual mode, the visually selected text
-xmap <Leader>di <Plug>VimspectorBalloonEval
+" " Balloon eval
+" " for normal mode - the word under the cursor
+" nmap <Leader>di <Plug>VimspectorBalloonEval
+" " for visual mode, the visually selected text
+" xmap <Leader>di <Plug>VimspectorBalloonEval
 
-" Navigating stack
-nmap <LocalLeader><F11> <Plug>VimspectorUpFrame
-nmap <LocalLeader><F12> <Plug>VimspectorDownFrame
-nmap <LocalLeader>B     <Plug>VimspectorBreakpoints
-nmap <LocalLeader>D     <Plug>VimspectorDisassemble
+" " Navigating stack
+" nmap <LocalLeader><F11> <Plug>VimspectorUpFrame
+" nmap <LocalLeader><F12> <Plug>VimspectorDownFrame
+" nmap <LocalLeader>B     <Plug>VimspectorBreakpoints
+" nmap <LocalLeader>D     <Plug>VimspectorDisassemble
 
-" ----- jistr/vim-nerdtree-tabs -----
-" Open/close NERDTree Tabs with ,m
-nmap <silent> ,m :NERDTreeTabsToggle<CR>
-" Reveal file in tree with ,n
-nmap <silent> ,n :NERDTreeFind<CR>
+" " ----- jistr/vim-nerdtree-tabs -----
+" " Open/close NERDTree Tabs with ,m
+" nmap <silent> ,m :NERDTreeTabsToggle<CR>
+" " Reveal file in tree with ,n
+" nmap <silent> ,n :NERDTreeFind<CR>
 
-" To have NERDTree always open on startup
-"let g:nerdtree_tabs_open_on_console_startup = 1
-" File filters
-let NERDTreeIgnore = [
-  "\ Python files
-  \ '\.pyc$',
-  \ '^__pycache__$[[dir]]',
-  "\ Gradle files
-  \ '^gradlew$',
-  \ '^gradlew.bat',
-  \ '^gradle$[[dir]]',
-  \ '^bin$[[dir]]',
-  \ '^build$[[dir]]',
-  "\ Misc files
-  \ '\.o$',
-  \ '^tags$[[file]]',
-  \ ]
-
-
-" ----- scrooloose/syntastic settings -----
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
-augroup mySyntastic
-  au!
-  au FileType tex let b:syntastic_mode = "passive"
-augroup END
+" " To have NERDTree always open on startup
+" "let g:nerdtree_tabs_open_on_console_startup = 1
+" " File filters
+" let NERDTreeIgnore = [
+"   "\ Python files
+"   \ '\.pyc$',
+"   \ '^__pycache__$[[dir]]',
+"   "\ Gradle files
+"   \ '^gradlew$',
+"   \ '^gradlew.bat',
+"   \ '^gradle$[[dir]]',
+"   \ '^bin$[[dir]]',
+"   \ '^build$[[dir]]',
+"   "\ Misc files
+"   \ '\.o$',
+"   \ '^tags$[[file]]',
+"   \ ]
 
 
-" ----- xolox/vim-easytags settings -----
-" Where to look for tags files
-set tags=./tags;,~/.vimtags
-" Sensible defaults
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
+" " ----- scrooloose/syntastic settings -----
+" let g:syntastic_error_symbol = '✘'
+" let g:syntastic_warning_symbol = "▲"
+" augroup mySyntastic
+"   au!
+"   au FileType tex let b:syntastic_mode = "passive"
+" augroup END
 
 
-" ----- majutsushi/tagbar settings -----
-" Open/close tagbar with \b
-nmap <silent> <leader>b :TagbarToggle<CR>
-" Uncomment to open tagbar automatically whenever possible
-"autocmd BufEnter * nested :call tagbar#autoopen(0)
+" " ----- xolox/vim-easytags settings -----
+" " Where to look for tags files
+" set tags=./tags;,~/.vimtags
+" " Sensible defaults
+" let g:easytags_events = ['BufReadPost', 'BufWritePost']
+" let g:easytags_async = 1
+" let g:easytags_dynamic_files = 2
+" let g:easytags_resolve_links = 1
 
 
-" ----- airblade/vim-gitgutter settings -----
-" In vim-airline, only display "hunks" if the diff is non-zero
-let g:airline#extensions#hunks#non_zero_only = 1
+" " ----- majutsushi/tagbar settings -----
+" " Open/close tagbar with \b
+" nmap <silent> <leader>b :TagbarToggle<CR>
+" " Uncomment to open tagbar automatically whenever possible
+" "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 
-" ----- Raimondi/delimitMate settings -----
-let delimitMate_expand_cr = 1
-augroup mydelimitMate
-  au!
-  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType tex let b:delimitMate_quotes = ""
-  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-augroup END
+" " ----- airblade/vim-gitgutter settings -----
+" " In vim-airline, only display "hunks" if the diff is non-zero
+" let g:airline#extensions#hunks#non_zero_only = 1
 
-" ----- jez/vim-superman settings -----
-" better man page support
-noremap K :SuperMan <cword><CR>
 
-" ----- tibabit/vim-templates settings -----
-let g:tmpl_search_paths = ['~/dotfiles/vim-templates']
+" " ----- Raimondi/delimitMate settings -----
+" let delimitMate_expand_cr = 1
+" augroup mydelimitMate
+"   au!
+"   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+"   au FileType tex let b:delimitMate_quotes = ""
+"   au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+"   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+" augroup END
 
-" ----- neoclide/coc.nvim settings -----
-" Automatically install these extensions
-let g:coc_global_extensions = [
-  \ 'coc-json',
-  \ 'coc-sh',
-  \ 'coc-tsserver',
-  \ 'coc-diagnostic',
-  \ 'coc-vimlsp',
-  \ 'coc-vimtex'
-  \ ]
-" TODO: check out:
-" * 'coc-git'
+" " ----- jez/vim-superman settings -----
+" " better man page support
+" noremap K :SuperMan <cword><CR>
 
-" TODO: think of something more like in VSCode
-" (so that cursor stops on the last occurence, not the next)
-" HINT: https://github.com/neoclide/coc.nvim/wiki/Multiple-cursors-support
-" Map ctrl+s to make new cursors
-nnoremap <silent> <C-s> <Plug>(coc-cursors-word)*:nohlsearch<CR>
-xnoremap <silent> <C-s> y/\V<C-r>=escape(@",'/\')<CR><CR>NgN<Plug>(coc-cursors-range)n:nohlsearch<CR>gn
+" " ----- tibabit/vim-templates settings -----
+" let g:tmpl_search_paths = ['~/dotfiles/vim-templates']
 
-" Make <Tab> to accept selected completion item
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<Tab>"
+" " ----- neoclide/coc.nvim settings -----
+" " Automatically install these extensions
+" let g:coc_global_extensions = [
+"   \ 'coc-json',
+"   \ 'coc-sh',
+"   \ 'coc-tsserver',
+"   \ 'coc-diagnostic',
+"   \ 'coc-vimlsp',
+"   \ 'coc-vimtex'
+"   \ ]
+" " TODO: check out:
+" " * 'coc-git'
 
-" Make <CR> notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <CR> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" " TODO: think of something more like in VSCode
+" " (so that cursor stops on the last occurence, not the next)
+" " HINT: https://github.com/neoclide/coc.nvim/wiki/Multiple-cursors-support
+" " Map ctrl+s to make new cursors
+" nnoremap <silent> <C-s> <Plug>(coc-cursors-word)*:nohlsearch<CR>
+" xnoremap <silent> <C-s> y/\V<C-r>=escape(@",'/\')<CR><CR>NgN<Plug>(coc-cursors-range)n:nohlsearch<CR>gn
 
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" " Make <Tab> to accept selected completion item
+" inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm()
+"                               \: "\<Tab>"
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#pum#visible() ? coc#pum#stop() : coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#pum#visible() ? coc#pum#stop() : coc#refresh()
-endif
+" " Make <CR> notify coc.nvim to format
+" " <C-g>u breaks current undo, please make your own choice.
+" inoremap <silent><expr> <CR> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" function! CheckBackspace() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" " Use <c-space> to trigger completion.
+" if has('nvim')
+"   inoremap <silent><expr> <c-space> coc#pum#visible() ? coc#pum#stop() : coc#refresh()
+" else
+"   inoremap <silent><expr> <c-@> coc#pum#visible() ? coc#pum#stop() : coc#refresh()
+" endif
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<CR>
+" " Use `[g` and `]g` to navigate diagnostics
+" " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
+" " GoTo code navigation.
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" " Use K to show documentation in preview window.
+" nnoremap <silent> K :call ShowDocumentation()<CR>
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+" function! ShowDocumentation()
+"   if CocAction('hasProvider', 'hover')
+"     call CocActionAsync('doHover')
+"   else
+"     call feedkeys('K', 'in')
+"   endif
+" endfunction
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" " Highlight the symbol and its references when holding the cursor.
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
+" " Symbol renaming.
+" nmap <leader>rn <Plug>(coc-rename)
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+" " Formatting selected code.
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+" augroup mygroup
+"   autocmd!
+"   " Setup formatexpr specified filetype(s).
+"   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+"   " Update signature help on jump placeholder.
+"   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+" augroup end
 
-" Run the Code Lens action on the current line.
-nmap <leader>cl  <Plug>(coc-codelens-action)
+" " Applying codeAction to the selected region.
+" " Example: `<leader>aap` for current paragraph
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-" Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-omap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
+" " Remap keys for applying codeAction to the current buffer.
+" nmap <leader>ac  <Plug>(coc-codeaction)
+" " Apply AutoFix to problem on the current line.
+" nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
+" " Run the Code Lens action on the current line.
+" nmap <leader>cl  <Plug>(coc-codelens-action)
 
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocActionAsync('format')
+" " Map function and class text objects
+" " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+" xmap if <Plug>(coc-funcobj-i)
+" omap if <Plug>(coc-funcobj-i)
+" xmap af <Plug>(coc-funcobj-a)
+" omap af <Plug>(coc-funcobj-a)
+" xmap ic <Plug>(coc-classobj-i)
+" omap ic <Plug>(coc-classobj-i)
+" xmap ac <Plug>(coc-classobj-a)
+" omap ac <Plug>(coc-classobj-a)
 
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+" " Remap <C-f> and <C-b> for scroll float windows/popups.
+" if has('nvim-0.4.0') || has('patch-8.2.0750')
+"   nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+"   nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+"   inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+"   inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+"   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+"   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+" endif
 
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+" " Add `:Format` command to format current buffer.
+" command! -nargs=0 Format :call CocActionAsync('format')
 
-" Map alt+f to format the current buffer
-nnoremap <silent><Esc>f :call CocActionAsync('format')<cr>
+" " Add `:Fold` command to fold current buffer.
+" command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-" Map alt+o to organize imports
-nnoremap <silent><Esc>o :call CocActionAsync('runCommand', 'editor.action.organizeImport')<cr>
+" " Add `:OR` command for organize imports of the current buffer.
+" command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" " Map alt+f to format the current buffer
+" nnoremap <silent><Esc>f :call CocActionAsync('format')<cr>
 
-" Mappings for CoCList
-" Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" " Map alt+o to organize imports
+" nnoremap <silent><Esc>o :call CocActionAsync('runCommand', 'editor.action.organizeImport')<cr>
 
-" ===== neoclide/coc-snippets =========================================
-"
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
+" " Add (Neo)Vim's native statusline support.
+" " NOTE: Please see `:h coc-status` for integrations with external plugins that
+" " provide custom statusline: lightline.vim, vim-airline.
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" " Mappings for CoCList
+" " Show all diagnostics.
+" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" " Manage extensions.
+" nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" " Show commands.
+" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" " Find symbol of current document.
+" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" " Search workspace symbols.
+" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" " Do default action for next item.
+" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" " Do default action for previous item.
+" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" " Resume latest coc list.
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_snippet_next = '<tab>'
+" " ===== neoclide/coc-snippets =========================================
+" "
+" inoremap <silent><expr> <TAB>
+"       \ coc#pum#visible() ? coc#_select_confirm() :
+"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"       \ CheckBackspace() ? "\<TAB>" :
+"       \ coc#refresh()
 
-" ===== fatih/vim-go ==================================================
+" function! CheckBackspace() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
-let g:go_list_type = "quickfix"
+" let g:coc_snippet_next = '<tab>'
 
-let g:go_disable_autoinstall = 0
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_fmt_command = "goimports"
+" " ===== fatih/vim-go ==================================================
 
-" ===== lervag/vimtex config ==========================================
-let g:vimtex_compiler_method = 'tectonic'
+" let g:go_list_type = "quickfix"
 
-let g:vimtex_view_general_viewer = 'sumatraPDF.exe'
-let g:vimtex_view_general_options = '-reuse-instance @pdf'
+" let g:go_disable_autoinstall = 0
+" let g:go_highlight_functions = 1
+" let g:go_highlight_methods = 1
+" let g:go_highlight_structs = 1
+" let g:go_highlight_operators = 1
+" let g:go_highlight_build_constraints = 1
+" let g:go_fmt_command = "goimports"
 
-let g:vimtex_compiler_tectonic = {
-  \ 'build_dir' : './build',
-  \ 'options' : [
-  \   '--keep-logs',
-  \   '--synctex'
-  \ ],
-  \}
+" " ===== lervag/vimtex config ==========================================
+" let g:vimtex_compiler_method = 'tectonic'
 
-let g:vimtex_quickfix_ignore_filters = [
-      \ 'Underfull',
-      \ 'Overfull',
-      \]
+" let g:vimtex_view_general_viewer = 'sumatraPDF.exe'
+" let g:vimtex_view_general_options = '-reuse-instance @pdf'
+
+" let g:vimtex_compiler_tectonic = {
+"   \ 'build_dir' : './build',
+"   \ 'options' : [
+"   \   '--keep-logs',
+"   \   '--synctex'
+"   \ ],
+"   \}
+
+" let g:vimtex_quickfix_ignore_filters = [
+"       \ 'Underfull',
+"       \ 'Overfull',
+"       \]
 
 " ===== Custom commands, aliases ======================================
 
