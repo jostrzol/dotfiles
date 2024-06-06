@@ -1,1 +1,0 @@
-/home/ogurczak/dotfiles/config/fish/functions/__fzf_cd.fish
