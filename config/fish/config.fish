@@ -3,3 +3,6 @@ if status is-interactive
 end
 
 starship init fish | source
+
+abbr vi $VISUAL
+abbr config cd $HOME/dotfiles '&&' $VISUAL

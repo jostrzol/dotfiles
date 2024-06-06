@@ -211,7 +211,8 @@ hi clear SignColumn
 
 " " Set the colorscheme
 set termguicolors
-" colorscheme solarized8
+
+colorscheme slate
 
 " " Fancy arrow symbols, requires a patched font
 " " To install a patched font, run over to
