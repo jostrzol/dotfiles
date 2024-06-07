@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 starship init fish | source
+pyenv init - | source
 
 abbr vi $VISUAL
 abbr config cd $HOME/dotfiles '&&' $VISUAL
