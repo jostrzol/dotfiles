@@ -7,3 +7,4 @@ pyenv init - | source
 
 abbr vi $VISUAL
 abbr config cd $HOME/dotfiles '&&' $VISUAL
+abbr gcmsg git commit -m 
