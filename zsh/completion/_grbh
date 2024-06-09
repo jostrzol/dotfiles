@@ -1,6 +1,0 @@
-#compdef grbh
-
-local -a branches
-branches=( $(git branch --list "$(git ticket)*" | cut -c '3-') )
-_values 'branches' $branches
-

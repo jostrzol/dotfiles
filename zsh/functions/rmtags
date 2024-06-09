@@ -1,6 +1,0 @@
-# remove all tags file from folder and subfolders
-
-rmtags() {
-  rm **/tags
-}
-
