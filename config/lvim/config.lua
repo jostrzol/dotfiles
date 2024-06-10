@@ -49,3 +49,5 @@ lvim.keys.normal_mode["[c"] = "<Cmd>lua require 'gitsigns'.nav_hunk('prev', {nav
 lvim.keys.normal_mode["]g"] = "<Cmd>lua vim.diagnostic.goto_next()<CR>"
 lvim.keys.normal_mode["[g"] = "<Cmd>lua vim.diagnostic.goto_prev()<CR>"
 lvim.keys.normal_mode["<Leader><Leader>"] = "<C-6>"
+
+vim.wo.wrap = true
