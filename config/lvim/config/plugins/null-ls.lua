@@ -1,5 +1,6 @@
 local null_ls = require("null-ls")
 
+---@diagnostic disable-next-line: redundant-parameter (it lies)
 null_ls.setup({
   debug = true,
   sources = {
