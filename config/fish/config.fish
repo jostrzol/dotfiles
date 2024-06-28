@@ -6,6 +6,7 @@ starship init fish | source
 pyenv init - | source
 
 abbr vi $VISUAL
+abbr svi sudoedit
 abbr config cd $HOME/dotfiles '&&' $VISUAL
 abbr gcmsg git commit -m 
 abbr ls exa
