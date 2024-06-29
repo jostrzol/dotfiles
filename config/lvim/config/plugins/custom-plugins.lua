@@ -7,4 +7,8 @@ lvim.plugins = {
   { "nvim-neotest/nvim-nio" },
   { "mfussenegger/nvim-dap-python" },
   { "nvim-neotest/neotest-python" },
+  {
+    'mrcjkb/rustaceanvim',
+    lazy = false, -- This plugin is already lazy
+  }
 }
