@@ -8,7 +8,8 @@ lvim.plugins = {
   { "mfussenegger/nvim-dap-python" },
   { "nvim-neotest/neotest-python" },
   {
-    'mrcjkb/rustaceanvim',
+    "mrcjkb/rustaceanvim",
     lazy = false, -- This plugin is already lazy
-  }
+  },
+  { "preservim/vim-markdown" },
 }
