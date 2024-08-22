@@ -12,4 +12,9 @@ lvim.plugins = {
     lazy = false, -- This plugin is already lazy
   },
   { "preservim/vim-markdown" },
+  {
+    "ray-x/lsp_signature.nvim",
+    config = function() require "lsp_signature".on_attach() end,
+    event = "BufRead"
+  }
 }

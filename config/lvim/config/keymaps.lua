@@ -13,7 +13,7 @@ lvim.lsp.buffer_mappings.normal_mode = {
   gd = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Goto definition" },
   gl = lvim.lsp.buffer_mappings.normal_mode["gl"],
   gu = { "<cmd>lua vim.lsp.buf.references()<cr>", "Goto references (usages)" },
-  gs = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show signature help" },
+  ga = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show signature help" },
   ["<space>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 }
 
@@ -31,3 +31,10 @@ lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.t
 -- Others
 lvim.keys.normal_mode["<M-f>"] = "<Cmd>lua require('lvim.lsp.utils').format()<CR>"
 lvim.keys.normal_mode["<Leader><Leader>"] = "<C-6>"
+-- See `https://github.com/LunarVim/LunarVim/discussions/2725#discussioncomment-3131783`
+lvim.keys.normal_mode["<Leader>bo"] = ':%bd!|e #|bd #|normal`"<CR>'
+vim.keymap.set(
+  { 'i' }, '<C-S-Space>',
+  function() require('lsp_signature').toggle_float_win() end,
+  { silent = true, noremap = true, desc = 'toggle signature' }
+)
