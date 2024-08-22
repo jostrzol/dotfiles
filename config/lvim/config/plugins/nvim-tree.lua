@@ -1,1 +1,1 @@
-lvim.builtin.nvimtree.setup.hijack_cursor = true
+lvim.builtin.nvimtree.setup.hijack_cursor = false
