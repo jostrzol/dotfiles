@@ -14,7 +14,7 @@ abbr config cd $HOME/dotfiles '&&' $VISUAL
 abbr gcmsg git commit -m 
 abbr ls exa
 abbr ll exa -la
-abbr l ll
+abbr l exa -la
 abbr j just
 abbr --set-cursor b 'nautilus >/dev/null 2>&1 % & disown'
 abbr pacman-sizes 'expac "%n %m" -l"\n" -Q $(pacman -Qq) | sort -rhk 2 | numfmt --to=iec-i --field=2 --format="%.3f" | less'
