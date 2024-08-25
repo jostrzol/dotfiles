@@ -7,5 +7,6 @@ null_ls.setup({
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.formatting.markdownlint,
     null_ls.builtins.formatting.mdformat,
+    null_ls.builtins.formatting.cmakelang,
   }
 })
