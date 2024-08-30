@@ -4,6 +4,9 @@ end
 
 bind \e\[3\;5~ kill-word
 bind \b backward-kill-word
+# search on tab
+bind \t complete-and-search
+bind -k btab complete
 
 starship init fish | source
 pyenv init - | source
@@ -21,3 +24,4 @@ abbr pacman-sizes 'expac "%n %m" -l"\n" -Q $(pacman -Qq) | sort -rhk 2 | numfmt 
 abbr gcm git checkout (__git.default_branch)
 abbr gcd 'cd "$(git rev-parse --show-toplevel)"'
 abbr o xdg-open
+abbr yt800 yt -q 800
