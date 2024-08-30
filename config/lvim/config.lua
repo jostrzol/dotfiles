@@ -5,4 +5,4 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
 -- Load all config files
-vim.cmd("runtime! config/**/*.lua")
+vim.cmd("runtime! lua/autoconf/**/*.lua")
