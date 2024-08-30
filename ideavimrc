@@ -1,4 +1,4 @@
-let mapleader='`'
+let mapleader=' '
 
 set ignorecase
 set smartcase
@@ -40,4 +40,9 @@ nnoremap <a-f> :action ReformatCode<CR>
 nnoremap <a-o> :action OptimizeImports<CR>
 nnoremap <a-m> :action Refactorings.QuickListPopupAction<CR>
 
-nnoremap <c-p> :action SearchEverywhere<CR>
+nnoremap <c-p> :action GotoFile<CR>
+nnoremap <leader>st :action TextSearchAction<CR>
+nnoremap <leader><leader> <C-6>
+
+nnoremap <c-n> :action SelectNextOccurrence<CR>
+vnoremap <c-n> :action SelectNextOccurrence<CR>
