@@ -25,3 +25,4 @@ abbr gcm git checkout (__git.default_branch)
 abbr gcd 'cd "$(git rev-parse --show-toplevel)"'
 abbr o xdg-open
 abbr ytl yt -q 800
+abbr lg lazygit
