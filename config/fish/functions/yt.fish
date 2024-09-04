@@ -1,5 +1,5 @@
 function yt -d 'downloads yt videos using yt-dlp'
-    argparse 'q/quality=' -- $argv
+    argparse --ignore-unknown 'q/quality=' -- $argv
     or return
 
     if test -z "$_flag_quality"
