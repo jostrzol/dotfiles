@@ -25,11 +25,11 @@ lvim.plugins = {
     'rmagatti/auto-session',
     lazy = false,
     dependencies = {
-      'nvim-telescope/telescope.nvim', -- Only needed if you want to use session lens
+      -- Only needed if you want to use session lens
+      'nvim-telescope/telescope.nvim',
     },
     ---enables autocomplete for opts
     ---@module "auto-session"
-    ---@type AutoSession.Config
     opts = {
       suppressed_dirs = { '~/', '~/ws', '~/Downloads', '/' },
       -- log_level = 'debug',
