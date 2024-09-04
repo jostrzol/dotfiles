@@ -24,4 +24,4 @@ abbr pacman-sizes 'expac "%n %m" -l"\n" -Q $(pacman -Qq) | sort -rhk 2 | numfmt 
 abbr gcm git checkout (__git.default_branch)
 abbr gcd 'cd "$(git rev-parse --show-toplevel)"'
 abbr o xdg-open
-abbr yt800 yt -q 800
+abbr ytl yt -q 800
