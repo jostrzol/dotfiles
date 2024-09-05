@@ -28,6 +28,9 @@ lvim.builtin.which_key.mappings["dF"] = {
   "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Test Class DAP" }
 lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" }
 
+-- Search
+lvim.builtin.which_key.mappings["su"] = { "<cmd>Telescope buffers previewer=false<cr>", "Buffers" }
+
 -- Others
 lvim.keys.normal_mode["<M-f>"] = "<Cmd>lua require('lvim.lsp.utils').format()<CR>"
 lvim.keys.normal_mode["<Leader><Leader>"] = "<C-6>"
