@@ -12,6 +12,9 @@ Plug 'preservim/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tommcdo/vim-exchange'
 
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'kana/vim-textobj-entire'
+
 nmap gcc :action CommentByLineComment<CR>
 vmap gc :action CommentByLineComment<CR>
 
@@ -27,6 +30,8 @@ nnoremap <c-w> :action CloseEditor<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gy :action GotoTypeDeclaration<CR>
 nnoremap gi :action ReSharperGotoImplementation<CR> :action GotoImplementation<CR>
+nnoremap gu :action ShowUsages<CR>
+nnoremap gb :action GotoSuperMethod<CR>
 
 nnoremap [g :action GotoPreviousError<CR>
 nnoremap ]g :action GotoNextError<CR>
@@ -35,14 +40,21 @@ nnoremap ]c :action VcsShowNextChangeMarker<CR>
 
 nnoremap <TAB> :action NextTab<CR>
 nnoremap <s-TAB> :action PreviousTab<CR>
+nnoremap <leader><leader> <C-6>
 
-nnoremap <a-f> :action ReformatCode<CR>
+" nnoremap <a-f> :action ReformatCode<CR>
+nnoremap <a-f> :action com.intellij.csharpier.ReformatWithCSharpierAction<CR>
 nnoremap <a-o> :action OptimizeImports<CR>
 nnoremap <a-m> :action Refactorings.QuickListPopupAction<CR>
 
+nnoremap \ :action SearchEverywhere<CR>
 nnoremap <c-p> :action GotoFile<CR>
 nnoremap <leader>st :action TextSearchAction<CR>
-nnoremap <leader><leader> <C-6>
 
 nnoremap <c-n> :action SelectNextOccurrence<CR>
 vnoremap <c-n> :action SelectNextOccurrence<CR>
+
+nnoremap mb :action Annotate<CR>
+nnoremap mh :action Vcs.ShowTabbedFileHistory<CR>
+
+nnoremap <leader>rn :action RenameElement<CR>
