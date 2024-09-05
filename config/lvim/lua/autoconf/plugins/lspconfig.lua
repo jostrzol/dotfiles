@@ -12,3 +12,10 @@ if not configs.fish_lsp then
 end
 
 lspconfig.fish_lsp.setup({})
+
+lspconfig.clangd.setup {
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
+}
