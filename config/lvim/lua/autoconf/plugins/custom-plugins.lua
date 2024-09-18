@@ -53,5 +53,6 @@ lvim.plugins = {
         lookup_parents = false,
       })
     end,
-  }
+  },
+  { "rickhowe/diffchar.vim" }
 }
