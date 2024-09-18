@@ -14,6 +14,7 @@ lvim.lsp.buffer_mappings.normal_mode = {
   gl = lvim.lsp.buffer_mappings.normal_mode["gl"],
   gu = { "<cmd>lua vim.lsp.buf.references()<cr>", "Goto references (usages)" },
   ga = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show signature help" },
+  ["<C-.>"] = {"<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action"},
   ["<space>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 }
 
