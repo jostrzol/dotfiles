@@ -1,7 +1,35 @@
 local null_ls = require("null-ls")
-local config = require("conf.plugins.null-ls")
+local helpers = require("null-ls.helpers")
 
-vim.api.nvim_create_autocmd("User", {
-  pattern = "ConfigLocalFinished",
-  callback = function() null_ls.setup(config) end,
+-- FORMATTERS
+require("lvim.lsp.null-ls.formatters").setup {
+  { name = "markdownlint" },
+  { name = "mdformat" },
+  { name = "cmake_format" },
+}
+
+null_ls.register({
+  helpers.make_builtin(
+    {
+      name = "typstfmt",
+      method = null_ls.methods.FORMATTING,
+      filetypes = { "typst" },
+      generator = null_ls.formatter({
+        command = "typstfmt",
+        args = { "--stdout" },
+        to_stdin = true,
+        from_stderr = true,
+      }),
+    }
+  )
 })
+
+-- LINTERS
+require("lvim.lsp.null-ls.linters").setup {
+  { name = "markdownlint" },
+}
+
+-- CODE ACTIONS
+-- require("lvim.lsp.null-ls.code_actions").setup {
+--
+-- }
