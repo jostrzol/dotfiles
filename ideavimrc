@@ -48,7 +48,7 @@ nnoremap <a-o> :action OptimizeImports<CR>
 nnoremap <a-m> :action Refactorings.QuickListPopupAction<CR>
 
 nnoremap \ :action SearchEverywhere<CR>
-nnoremap <c-p> :action GotoFile<CR>
+nnoremap <leader>sf :action GotoFile<CR>
 nnoremap <leader>st :action TextSearchAction<CR>
 
 nnoremap <c-n> :action SelectNextOccurrence<CR>
