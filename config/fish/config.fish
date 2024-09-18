@@ -23,6 +23,9 @@ abbr --set-cursor b 'nautilus >/dev/null 2>&1 % & disown'
 abbr pacman-sizes 'expac "%n %m" -l"\n" -Q $(pacman -Qq) | sort -rhk 2 | numfmt --to=iec-i --field=2 --format="%.3f" | less'
 abbr gcm git checkout (__git.default_branch)
 abbr gcd 'cd "$(git rev-parse --show-toplevel)"'
-abbr o xdg-open
+abbr s xdg-open
 abbr ytl yt -q 800
 abbr lg lazygit
+abbr idea intellij-idea-ultimate-edition
+abbr zipd 'zip -r "$(basename "$PWD")"'
+abbr --set-cursor evincebg 'evince >/dev/null 2>&1 % & disown'
