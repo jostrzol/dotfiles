@@ -1,6 +1,10 @@
 local dap = require("dap")
+local vscode = require("dap.ext.vscode")
 
 lvim.builtin.dap.active = true
+
+-- load `$pwd/.vscode/launch.json` settings
+vscode.load_launchjs()
 
 -- python
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
