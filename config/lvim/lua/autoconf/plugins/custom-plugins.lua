@@ -54,5 +54,43 @@ lvim.plugins = {
       })
     end,
   },
-  { "rickhowe/diffchar.vim" }
+  { "rickhowe/diffchar.vim" },
+  {
+    "nacro90/numb.nvim",
+    event = "BufRead",
+    config = function()
+      require("numb").setup {
+        show_numbers = true,    -- Enable 'number' for the window while peeking
+        show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+      }
+    end,
+  },
+  {
+    "kevinhwang91/nvim-bqf",
+    event = { "BufRead", "BufNew" },
+    config = function()
+      require("bqf").setup({
+        auto_enable = true,
+        preview = {
+          win_height = 12,
+          win_vheight = 12,
+          delay_syntax = 80,
+          border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
+        },
+        func_map = {
+          vsplit = "",
+          ptogglemode = "z,",
+          stoggleup = "",
+        },
+        filter = {
+          fzf = {
+            action_for = { ["ctrl-s"] = "split" },
+            extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
+          },
+        },
+      })
+    end,
+    dependencies = { "junegunn/fzf" }
+  },
+  { "tpope/vim-repeat" },
 }
