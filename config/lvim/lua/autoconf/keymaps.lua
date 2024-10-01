@@ -14,7 +14,7 @@ lvim.lsp.buffer_mappings.normal_mode = {
   gl = lvim.lsp.buffer_mappings.normal_mode["gl"],
   gu = { "<cmd>lua vim.lsp.buf.references()<cr>", "Goto references (usages)" },
   ga = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show signature help" },
-  ["<C-.>"] = {"<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action"},
+  ["<C-.>"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action" },
   ["<space>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 }
 
@@ -33,12 +33,17 @@ lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.t
 lvim.builtin.which_key.mappings["su"] = { "<cmd>Telescope buffers previewer=false<cr>", "Buffers" }
 
 -- Others
+lvim.keys.normal_mode["<M-Right>"] = "<cmd>:vertical resize +2<cr>"
+lvim.keys.normal_mode["<M-Left>"] = "<cmd>:vertical resize -2<cr>"
+lvim.keys.normal_mode["<M-Down>"] = "<cmd>:resize +2<cr>"
+lvim.keys.normal_mode["<M-Up>"] = "<cmd>:resize -2<cr>"
 lvim.keys.normal_mode["<M-f>"] = "<Cmd>lua require('lvim.lsp.utils').format()<CR>"
 lvim.keys.normal_mode["<Leader><Leader>"] = "<C-6>"
 -- See `https://github.com/LunarVim/LunarVim/discussions/2725#discussioncomment-3131783`
 lvim.keys.normal_mode["<Leader>bo"] = ':%bd!|e #|bd #|normal`"<CR>'
 vim.keymap.set(
-  { 'i' }, '<C-S-Space>',
-  function() require('lsp_signature').toggle_float_win() end,
-  { silent = true, noremap = true, desc = 'toggle signature' }
+  { "i" }, "<C-S-Space>",
+  function() require("lsp_signature").toggle_float_win() end,
+  { silent = true, noremap = true, desc = "Toggle signature" }
 )
+lvim.keys.normal_mode["<M-m>"] = "<cmd>:make<cr>"
