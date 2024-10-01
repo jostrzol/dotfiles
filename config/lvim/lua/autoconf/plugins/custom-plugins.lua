@@ -93,4 +93,20 @@ lvim.plugins = {
     dependencies = { "junegunn/fzf" }
   },
   { "tpope/vim-repeat" },
+  {
+    "jalvesaq/Nvim-R",
+    config = function()
+      vim.g["R_assign"] = "3"
+      vim.g["R_disable_cmds"] = { "RStart" }
+    end,
+  },
+  {
+    "jalvesaq/cmp-nvim-r",
+    config = function()
+      require("cmp_nvim_r").setup({
+        filetypes = { "r", "rmd", "quarto" },
+        doc_width = 58
+      })
+    end,
+  },
 }

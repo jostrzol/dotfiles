@@ -8,3 +8,21 @@ function _G.put(...)
   print(table.concat(objects, '\n'))
   return ...
 end
+
+local _term_protocol = "term://"
+local _r_term_suffix = ":R"
+
+function R_get_terminal_buffer_window()
+  local buffers = vim.api.nvim_list_bufs()
+  for _, buffer in pairs(buffers) do
+    local name = vim.api.nvim_buf_get_name(buffer)
+
+    local len = string.len(name)
+    local protocol = string.sub(name, 1, string.len(_term_protocol))
+    local suffix = string.sub(name, len - string.len(_r_term_suffix), len - 1)
+    if protocol == _term_protocol and suffix == _r_term_suffix then
+      return vim.fn.bufwinid(buffer)
+    end
+  end
+  return nil
+end
