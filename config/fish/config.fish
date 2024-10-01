@@ -28,4 +28,3 @@ abbr ytl yt -q 800
 abbr lg lazygit
 abbr idea intellij-idea-ultimate-edition
 abbr zipd 'zip -r "$(basename "$PWD")"'
-abbr --set-cursor evincebg 'evince >/dev/null 2>&1 % & disown'
