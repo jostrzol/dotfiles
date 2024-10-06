@@ -36,8 +36,24 @@ require("lvim.lsp.manager").setup(
           -- linking_verbs = false,
           -- avoid_curses = true,
           -- terminating_conjunctions = true
-        }
-      }
+        },
+      },
+    },
+    filetypes = {
+      "markdown",
+      "rust",
+      "typescript",
+      "typescriptreact",
+      "javascript",
+      "python",
+      "go",
+      -- "c",
+      "cpp",
+      "ruby",
+      "swift",
+      "csharp",
+      "toml",
+      "lua",
     },
   }
 )
