@@ -42,8 +42,8 @@ nnoremap <TAB> :action NextTab<CR>
 nnoremap <s-TAB> :action PreviousTab<CR>
 nnoremap <leader><leader> <C-6>
 
-" nnoremap <a-f> :action ReformatCode<CR>
-nnoremap <a-f> :action com.intellij.csharpier.ReformatWithCSharpierAction<CR>
+nnoremap <a-f> :action ReformatCode<CR>
+" nnoremap <a-f> :action com.intellij.csharpier.ReformatWithCSharpierAction<CR>
 nnoremap <a-o> :action OptimizeImports<CR>
 nnoremap <a-m> :action Refactorings.QuickListPopupAction<CR>
 
