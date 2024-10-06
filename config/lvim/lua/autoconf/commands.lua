@@ -14,3 +14,11 @@ vim.api.nvim_create_user_command(
   end,
   {}
 )
+
+vim.api.nvim_create_user_command(
+  "DapClearBreakpoints",
+  function()
+    require("dap").clear_breakpoints()
+  end,
+  {}
+)
