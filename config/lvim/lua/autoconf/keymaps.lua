@@ -29,8 +29,12 @@ lvim.builtin.which_key.mappings["dF"] = {
   "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Test Class DAP" }
 lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" }
 
--- Search
-lvim.builtin.which_key.mappings["su"] = { "<cmd>Telescope buffers previewer=false<cr>", "Buffers" }
+-- Telescope
+lvim.builtin.which_key.mappings["sgb"] = lvim.builtin.which_key.mappings["sb"]
+lvim.builtin.which_key.mappings["sb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Buffers" }
+lvim.builtin.telescope.defaults.mappings.i["<C-d>"] = require('telescope.actions').delete_buffer
+lvim.builtin.telescope.defaults.mappings.n["<C-d>"] = require('telescope.actions').delete_buffer
+lvim.builtin.telescope.defaults.mappings.n["q"] = require('telescope.actions').close
 
 -- Others
 lvim.keys.normal_mode["<M-Right>"] = "<cmd>:vertical resize +2<cr>"
