@@ -35,6 +35,7 @@ lvim.builtin.which_key.mappings["sb"] = { "<cmd>Telescope buffers previewer=fals
 lvim.builtin.telescope.defaults.mappings.i["<C-d>"] = require('telescope.actions').delete_buffer
 lvim.builtin.telescope.defaults.mappings.n["<C-d>"] = require('telescope.actions').delete_buffer
 lvim.builtin.telescope.defaults.mappings.n["q"] = require('telescope.actions').close
+lvim.builtin.telescope.pickers.buffers.initial_mode = "insert"
 
 -- Others
 lvim.keys.normal_mode["<M-Right>"] = "<cmd>:vertical resize +2<cr>"
