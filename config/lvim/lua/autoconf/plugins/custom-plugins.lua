@@ -109,4 +109,5 @@ lvim.plugins = {
       })
     end,
   },
+  { "tpope/vim-abolish" },
 }
