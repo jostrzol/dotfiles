@@ -1,9 +1,11 @@
+local lspmanager = require("lvim.lsp.manager")
+
 vim.lsp.set_log_level('debug')
 
 -- remove automatic lsp servers
 vim.list_extend(
   lvim.lsp.automatic_configuration.skipped_servers,
-  { "rust_analyzer", "pyright", "harper_ls" }
+  { "rust_analyzer", "pyright", "harper_ls", "tinymist", "typst_lsp" }
 )
 -- add automatic lsp servers
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(
@@ -13,49 +15,59 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(
   lvim.lsp.automatic_configuration.skipped_servers
 )
 
-require("lvim.lsp.manager").setup("marksman")
-require("lvim.lsp.manager").setup(
-  "harper_ls",
+lspmanager.setup("marksman")
+lspmanager.setup(
+  "tinymist",
   {
+    offset_encoding = "utf-8",
     settings = {
-      ["harper-ls"] = {
-        linters = {
-          -- spell_check = true,
-          -- spelled_numbers = false,
-          -- an_a = true,
-          sentence_capitalization = false,
-          -- unclosed_quotes = true,
-          -- wrong_quotes = false,
-          -- long_sentences = true,
-          -- repeated_words = true,
-          -- spaces = true,
-          -- matcher = true,
-          -- correct_number_suffix = true,
-          -- number_suffix_capitalization = true,
-          -- multiple_sequential_pronouns = true,
-          -- linking_verbs = false,
-          -- avoid_curses = true,
-          -- terminating_conjunctions = true
-        },
-      },
-    },
-    filetypes = {
-      "markdown",
-      "rust",
-      "typescript",
-      "typescriptreact",
-      "javascript",
-      "python",
-      "go",
-      -- "c",
-      "cpp",
-      "ruby",
-      "swift",
-      "csharp",
-      "toml",
-      "lua",
-    },
+      formatterMode = "typstyle",
+      exportPdf = "onSave",
+    }
   }
 )
+-- lspmanager.setup(
+--   "harper_ls",
+--   {
+--     settings = {
+--       ["harper-ls"] = {
+--         linters = {
+--           -- spell_check = true,
+--           -- spelled_numbers = false,
+--           -- an_a = true,
+--           sentence_capitalization = false,
+--           -- unclosed_quotes = true,
+--           -- wrong_quotes = false,
+--           -- long_sentences = true,
+--           -- repeated_words = true,
+--           -- spaces = true,
+--           -- matcher = true,
+--           -- correct_number_suffix = true,
+--           -- number_suffix_capitalization = true,
+--           -- multiple_sequential_pronouns = true,
+--           -- linking_verbs = false,
+--           -- avoid_curses = true,
+--           -- terminating_conjunctions = true
+--         },
+--       },
+--     },
+--     filetypes = {
+--       "markdown",
+--       "rust",
+--       "typescript",
+--       "typescriptreact",
+--       "javascript",
+--       "python",
+--       "go",
+--       -- "c",
+--       "cpp",
+--       "ruby",
+--       "swift",
+--       "csharp",
+--       "toml",
+--       "lua",
+--     },
+--   }
+-- )
 
 vim.list_extend(lvim.builtin.cmp.sources, { name = "cmp_nvim_r", priority_weight = 110 })
