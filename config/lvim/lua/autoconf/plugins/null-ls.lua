@@ -26,7 +26,11 @@ null_ls.register({
 
 -- LINTERS
 require("lvim.lsp.null-ls.linters").setup {
-  { name = "markdownlint" },
+  {
+    name = "markdownlint",
+    extra_filetypes = { "rmd" },
+    extra_args = {"--disable MD025 MD024"}
+  },
 }
 
 -- CODE ACTIONS
