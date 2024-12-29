@@ -37,7 +37,10 @@ lvim.builtin.telescope.defaults.mappings.n["<C-d>"] = require('telescope.actions
 lvim.builtin.telescope.defaults.mappings.n["q"] = require('telescope.actions').close
 lvim.builtin.telescope.pickers.buffers.initial_mode = "insert"
 
--- Others
+-- Others (which-key)
+lvim.builtin.which_key.mappings["bo"] = { "<cmd>BufferLineCloseOthers<cr>", "Close others" }
+
+-- Others (non-which-key)
 lvim.keys.normal_mode["<M-Right>"] = "<cmd>:vertical resize +2<cr>"
 lvim.keys.normal_mode["<M-Left>"] = "<cmd>:vertical resize -2<cr>"
 lvim.keys.normal_mode["<M-Down>"] = "<cmd>:resize +2<cr>"
@@ -45,7 +48,6 @@ lvim.keys.normal_mode["<M-Up>"] = "<cmd>:resize -2<cr>"
 lvim.keys.normal_mode["<M-f>"] = "<Cmd>lua require('lvim.lsp.utils').format()<CR>"
 lvim.keys.normal_mode["<Leader><Leader>"] = "<C-6>"
 -- See `https://github.com/LunarVim/LunarVim/discussions/2725#discussioncomment-3131783`
-lvim.keys.normal_mode["<Leader>bo"] = ':%bd!|e #|bd #|normal`"<CR>'
 vim.keymap.set(
   { "i" }, "<C-S-Space>",
   function() require("lsp_signature").toggle_float_win() end,
