@@ -109,4 +109,27 @@ lvim.plugins = {
     end,
   },
   { "tpope/vim-abolish" },
+  {
+    "sontungexpt/url-open",
+    event = "VeryLazy",
+    cmd = "URLOpenUnderCursor",
+    config = function()
+      local status_ok, url_open = pcall(require, "url-open")
+      if not status_ok then
+        return
+      end
+      url_open.setup({
+        open_app = "xdg-open",
+        extra_patterns = {
+          {
+            pattern = [[(%f[-.a-zA-Z0-9/]%.?/[-.a-zA-Z0-9/]+)]],
+          },
+          -- Matches UNIX file paths
+          -- /home/
+          -- ./custom-plugins.lua
+          -- but not: asd/asd
+        }
+      })
+    end,
+  },
 }

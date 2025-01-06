@@ -39,6 +39,7 @@ lvim.builtin.telescope.pickers.buffers.initial_mode = "insert"
 
 -- Others (which-key)
 lvim.builtin.which_key.mappings["bo"] = { "<cmd>BufferLineCloseOthers<cr>", "Close others" }
+lvim.builtin.which_key.mappings["o"] = { "<cmd>URLOpenUnderCursor<cr>", "Open URL" }
 
 -- Others (non-which-key)
 lvim.keys.normal_mode["<M-Right>"] = "<cmd>:vertical resize +2<cr>"
