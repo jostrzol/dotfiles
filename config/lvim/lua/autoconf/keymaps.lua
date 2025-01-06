@@ -39,9 +39,15 @@ lvim.builtin.telescope.pickers.buffers.initial_mode = "insert"
 
 -- Others (which-key)
 lvim.builtin.which_key.mappings["bo"] = { "<cmd>BufferLineCloseOthers<cr>", "Close others" }
+lvim.builtin.which_key.mappings["bd"] = { "<cmd>bp | bd #<cr>", "Close buffer" }
+lvim.builtin.which_key.mappings["bp"] = { "<cmd>BufferLinePick<cr>", "Pick" }
 lvim.builtin.which_key.mappings["o"] = { "<cmd>URLOpenUnderCursor<cr>", "Open URL" }
 
 -- Others (non-which-key)
+lvim.keys.normal_mode["<C-M-l>"] = "<cmd>:bn<cr>"
+lvim.keys.normal_mode["<C-M-h>"] = "<cmd>:bp<cr>"
+lvim.keys.normal_mode["<C-M-S-l>"] = "<cmd>:BufferLineMoveNext<cr>"
+lvim.keys.normal_mode["<C-M-S-h>"] = "<cmd>:BufferLineMovePrev<cr>"
 lvim.keys.normal_mode["<M-Right>"] = "<cmd>:vertical resize +2<cr>"
 lvim.keys.normal_mode["<M-Left>"] = "<cmd>:vertical resize -2<cr>"
 lvim.keys.normal_mode["<M-Down>"] = "<cmd>:resize +2<cr>"
