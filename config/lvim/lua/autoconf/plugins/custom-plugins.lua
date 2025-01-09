@@ -173,4 +173,10 @@ lvim.plugins = {
       }
     end
   },
+  {
+    "bkad/CamelCaseMotion",
+    config = function()
+      vim.api.nvim_call_function("camelcasemotion#CreateMotionMappings", { "," })
+    end
+  },
 }
