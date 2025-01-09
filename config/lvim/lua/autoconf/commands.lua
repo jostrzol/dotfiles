@@ -22,3 +22,11 @@ vim.api.nvim_create_user_command(
   end,
   {}
 )
+
+vim.api.nvim_create_user_command(
+  "DapBreakpointConditional",
+  function(cmd)
+    require("dap").toggle_breakpoint(cmd.args)
+  end,
+  { nargs = '?' }
+)
