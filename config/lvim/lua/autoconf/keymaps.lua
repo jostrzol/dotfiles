@@ -19,15 +19,35 @@ lvim.lsp.buffer_mappings.normal_mode = {
 }
 
 -- DAP
-lvim.builtin.which_key.mappings["dm"] = { "<cmd>lua require('neotest').run.run()<cr>",
-  "Test Method" }
-lvim.builtin.which_key.mappings["dM"] = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>",
-  "Test Method DAP" }
+lvim.builtin.which_key.mappings["dm"] = {
+  "<cmd>lua require('neotest').run.run()<cr>",
+  "Test Method"
+}
+lvim.builtin.which_key.mappings["dM"] = {
+  "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>",
+  "Test Method DAP"
+}
+lvim.builtin.which_key.mappings["dl"] = {
+  "<cmd>lua require('neotest').run.run_last()<cr>",
+  "Rerun Last Test"
+}
+lvim.builtin.which_key.mappings["dL"] = {
+  "<cmd>lua require('neotest').run.run_last({strategy = 'dap'})<cr>",
+  "Rerun Last Test DAP"
+}
 lvim.builtin.which_key.mappings["df"] = {
-  "<cmd>lua require('neotest').run.run({vim.fn.expand('%')})<cr>", "Test Class" }
+  "<cmd>lua require('neotest').run.run({vim.fn.expand('%')})<cr>",
+  "Test Class"
+}
 lvim.builtin.which_key.mappings["dF"] = {
-  "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Test Class DAP" }
-lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" }
+  "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>",
+  "Test Class DAP"
+}
+lvim.builtin.which_key.mappings["dS"] = {
+  "<cmd>lua require('neotest').summary.toggle()<cr>",
+  "Test Summary"
+}
+lvim.keys.normal_mode["<M-k>"] = function() require('dap.ui.widgets').hover() end
 
 -- Telescope
 lvim.builtin.which_key.mappings["sgb"] = lvim.builtin.which_key.mappings["sb"]
@@ -35,7 +55,6 @@ lvim.builtin.which_key.mappings["sb"] = { "<cmd>Telescope buffers previewer=fals
 lvim.builtin.telescope.defaults.mappings.i["<C-d>"] = require('telescope.actions').delete_buffer
 lvim.builtin.telescope.defaults.mappings.n["<C-d>"] = require('telescope.actions').delete_buffer
 lvim.builtin.telescope.defaults.mappings.n["q"] = require('telescope.actions').close
-lvim.builtin.telescope.pickers.buffers.initial_mode = "insert"
 
 -- Others (which-key)
 lvim.builtin.which_key.mappings["bo"] = { "<cmd>BufferLineCloseOthers<cr>", "Close others" }
@@ -54,7 +73,6 @@ lvim.keys.normal_mode["<M-Down>"] = "<cmd>:resize +2<cr>"
 lvim.keys.normal_mode["<M-Up>"] = "<cmd>:resize -2<cr>"
 lvim.keys.normal_mode["<M-f>"] = "<Cmd>lua require('lvim.lsp.utils').format()<CR>"
 lvim.keys.normal_mode["<Leader><Leader>"] = "<C-6>"
--- See `https://github.com/LunarVim/LunarVim/discussions/2725#discussioncomment-3131783`
 vim.keymap.set(
   { "i" }, "<C-S-Space>",
   function() require("lsp_signature").toggle_float_win() end,
