@@ -1,6 +1,8 @@
 local null_ls = require("null-ls")
 local helpers = require("null-ls.helpers")
 
+lvim.lsp.null_ls.setup.debug = true
+
 -- FORMATTERS
 require("lvim.lsp.null-ls.formatters").setup {
   { name = "markdownlint" },
@@ -29,7 +31,7 @@ require("lvim.lsp.null-ls.linters").setup {
   {
     name = "markdownlint",
     extra_filetypes = { "rmd" },
-    extra_args = {"--disable MD025 MD024"}
+    extra_args = { "--disable MD025 MD024" }
   },
 }
 

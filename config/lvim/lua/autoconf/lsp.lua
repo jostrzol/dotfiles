@@ -1,4 +1,6 @@
 local lspmanager = require("lvim.lsp.manager")
+local lspconfig = require("lspconfig")
+local configs = require("lspconfig.configs")
 
 vim.lsp.set_log_level('debug')
 
@@ -28,6 +30,34 @@ lspmanager.setup(
     }
   }
 )
+-- should work but didn't test
+lspmanager.setup("clangd", {
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
+})
+-- if not, here's the old config
+-- lspconfig.clangd.setup {
+--   cmd = {
+--     "clangd",
+--     "--offset-encoding=utf-16",
+--   },
+-- }
+
+-- register custom lsp servers
+if not configs.fish_lsp then
+  configs.fish_lsp = {
+    default_config = {
+      cmd = { "fish-lsp", "start" },
+      root_dir = lspconfig.util.root_pattern('.git'),
+      filetypes = { "fish" },
+    },
+  }
+end
+
+-- config custom lsp servers
+lspconfig.fish_lsp.setup({})
 
 -- manually config autocompletion sources
 vim.list_extend(lvim.builtin.cmp.sources, { name = "cmp_nvim_r", priority_weight = 110 })

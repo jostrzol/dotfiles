@@ -1,3 +1,4 @@
+-- nvimtree
 local nvimtree = lvim.builtin.nvimtree
 
 nvimtree.setup.hijack_cursor = false
