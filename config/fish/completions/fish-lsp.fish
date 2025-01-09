@@ -98,7 +98,7 @@ complete -c fish-lsp -n '__fish_lsp_using_command info; and not __fish_contains_
 complete -c fish-lsp -n '__fish_lsp_using_command info; and not __fish_contains_opt repo'          -l repo           -d 'show the repo path'
 complete -c fish-lsp -n '__fish_lsp_using_command info; and not __fish_contains_opt time'          -l time           -d 'show the build-time'
 complete -c fish-lsp -n '__fish_lsp_using_command info; and not __fish_contains_opt env'           -l env            -d 'show the env-variables used'
-complete -c fish-lsp -n '__fish_lsp_using_command info; and not __fish_contains_opt lsp-version'   -l lsp-verision   -d 'show the npm package for the lsp-verision'
+complete -c fish-lsp -n '__fish_lsp_using_command info; and not __fish_contains_opt lsp-version'   -l lsp-version   -d 'show the npm package for the lsp-version'
 complete -c fish-lsp -n '__fish_lsp_using_command info; and not __fish_contains_opt capabilities'  -l capabilities   -d 'show the lsp capabilities implemented' 
 complete -c fish-lsp -n '__fish_lsp_using_command info; and not __fish_contains_opt man-file'      -l man-file       -d 'show man file path'
 complete -c fish-lsp -n '__fish_lsp_using_command info; and not __fish_contains_opt logs-file'     -l logs-file      -d 'show logs.txt file path'
@@ -114,7 +114,7 @@ complete -c fish-lsp -n '__fish_lsp_using_command logger; and not __fish_contain
 
 # print all $fish_lsp_submcommands
 function _fish_lsp_get_features
-  printf %b\n complete hover rename reference logger formatting codeAction codeLens folding signature executeCommand inlayHint highlight diagnostic
+  printf %b\n complete hover rename reference formatting codeAction codeLens folding signature executeCommand inlayHint highlight diagnostic
 end
 
 # fish-lsp env --<TAB>
