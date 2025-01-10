@@ -167,7 +167,7 @@ lvim.plugins = {
         open_app = "xdg-open",
         extra_patterns = {
           {
-            pattern = [[(%f[-.a-zA-Z0-9/]%.?/[-.a-zA-Z0-9/]+)]],
+            pattern = [[(%f[-.~_a-zA-Z0-9/][%.~]?/[-._a-zA-Z0-9/]+)]],
           },
           -- Matches UNIX file paths
           -- /home/
