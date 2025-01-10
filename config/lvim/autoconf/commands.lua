@@ -30,3 +30,17 @@ vim.api.nvim_create_user_command(
   end,
   { nargs = '?' }
 )
+
+vim.api.nvim_create_user_command(
+  "LspCapabilities",
+  function(_)
+    local buffer = vim.api.nvim_get_current_buf()
+    ---@type (lsp.ServerCapabilities?)
+    local capabilities = {}
+    for _, client in pairs(vim.lsp.get_clients({ bufnr = buffer })) do
+      capabilities = vim.tbl_deep_extend("force", capabilities, client.server_capabilities)
+    end
+    put(capabilities)
+  end,
+  {}
+)
