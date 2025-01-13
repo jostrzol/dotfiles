@@ -195,6 +195,10 @@ lvim.plugins = {
             'method',
           },
         },
+        on_attach = function(buf)
+          local ft = vim.api.nvim_get_option_value("filetype", { buf = buf });
+          return ft ~= "zig"
+        end
       }
     end
   },
@@ -205,6 +209,7 @@ lvim.plugins = {
         textobjects = {
           select = {
             enable = true,
+            disable = { "zig" },
             keymaps = {
               ["af"] = "@function.outer",
               ["if"] = "@function.inner",
