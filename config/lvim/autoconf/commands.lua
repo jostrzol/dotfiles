@@ -45,6 +45,19 @@ vim.api.nvim_create_user_command(
   {}
 )
 
+vim.api.nvim_create_user_command(
+  "LspLogClear",
+  function(_)
+    local log_path = vim.fn.glob(vim.fn.stdpath("state") .. "/lsp.log")
+    local file, err = io.open(log_path, "w")
+    assert(file, err)
+
+    local _, err2 = file:write("")
+    assert(err2 == nil, err2)
+  end,
+  {}
+)
+
 vim.api.nvim_create_user_command('Redir', function(ctx)
   local lines = vim.split(vim.api.nvim_exec(ctx.args, true), '\n', { plain = true })
   vim.cmd('enew')
