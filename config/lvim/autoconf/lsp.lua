@@ -30,6 +30,7 @@ lspmanager.setup(
     }
   }
 )
+lspmanager.setup("taplo")
 -- should work but didn't test
 lspmanager.setup("clangd", {
   cmd = {
