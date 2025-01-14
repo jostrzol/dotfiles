@@ -27,3 +27,4 @@ abbr ytl yt -q 800
 abbr lg lazygit
 abbr idea intellij-idea-ultimate-edition
 abbr zipd 'zip -r "$(basename "$PWD")"'
+abbr hist 'history --show-time="%F %T "'
