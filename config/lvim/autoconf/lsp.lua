@@ -25,8 +25,9 @@ lspmanager.setup(
   {
     offset_encoding = "utf-8",
     settings = {
-      formatterMode = "typstyle",
+      -- formatterMode = "typstyle",
       exportPdf = "onSave",
+      semanticTokens = "disable",
     }
   }
 )

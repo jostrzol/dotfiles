@@ -10,21 +10,23 @@ require("lvim.lsp.null-ls.formatters").setup {
   { name = "cmake_format" },
 }
 
--- null_ls.register({
---   helpers.make_builtin(
---     {
---       name = "typstfmt",
---       method = null_ls.methods.FORMATTING,
---       filetypes = { "typst" },
---       generator = null_ls.formatter({
---         command = "typstfmt",
---         args = { "--stdout" },
---         to_stdin = true,
---         from_stderr = true,
---       }),
---     }
---   )
--- })
+null_ls.register({
+  helpers.make_builtin(
+    {
+      name = "typstyle",
+      method = null_ls.methods.FORMATTING,
+      filetypes = { "typst" },
+      generator = null_ls.formatter({
+        command = "typstyle",
+        args = { "--inplace", "$FILENAME" },
+        to_temp_file = true,
+        from_temp_file = true,
+        -- to_stdin = true,
+        -- from_stderr = true,
+      }),
+    }
+  )
+})
 
 -- LINTERS
 require("lvim.lsp.null-ls.linters").setup {
