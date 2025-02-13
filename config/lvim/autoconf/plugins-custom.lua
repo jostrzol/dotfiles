@@ -229,4 +229,10 @@ lvim.plugins = {
       vim.api.nvim_call_function("camelcasemotion#CreateMotionMappings", { "," })
     end
   },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
 }
