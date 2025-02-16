@@ -60,7 +60,8 @@ lvim.builtin.telescope.defaults.mappings.n["<C-d>"] = require('telescope.actions
 lvim.builtin.telescope.defaults.mappings.n["q"] = require('telescope.actions').close
 
 -- Git
-lvim.builtin.which_key.mappings["gf"] = { '<cmd>lua lazygit_toggle({args={"-f", vim.fn.expand("%")}})<cr>', "LazyGit on file" }
+lvim.builtin.which_key.mappings["gf"] = { '<cmd>lua lazygit_toggle({args={"-f", vim.fn.expand("%")}})<cr>',
+  "LazyGit on file" }
 
 -- Others (which-key)
 lvim.builtin.which_key.mappings["bo"] = { "<cmd>BufferLineCloseOthers<cr>", "Close others" }
