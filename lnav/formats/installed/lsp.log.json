@@ -5,11 +5,15 @@
     "description": "Log format used by nvim lsp client",
     "regex": {
       "basic": {
-        "pattern": "^\\[(?<level>\\w+)\\]\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\]\\s(?<source>.+?:\\d+)\\s*(?<method>\".+?\"\\s*)*(?<body>{.*})(?<tail>.*)$"
+        "pattern": "^\\[(?<level>\\w+)\\]\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\]\\s(?<source>.+?:\\d+)\\s*(?:\"LSP\\[(?<LSP>.+?\\s*)\\]\")?\\s*(?:\"(?<type>.+?)\")?\\s*(?<number>\\d*)?\\s*(?:\"(?<method>.*)\")?[\\w\\s]+?(?<body>{\\s*(?:id\\s*=\\s*(?<id>\\d+))?.*})(?<tail>.*)?$"
       }
     },
     "ordered-by-time": true,
     "file-pattern": "lsp.log",
+    "timestamp-field": "timestamp",
+    "level-field": "level",
+    "body-field": "body",
+    "opid-field": "id",
     "level": {
       "debug": "DEBUG",
       "error": "ERROR",
@@ -17,24 +21,44 @@
       "info": "START|INFO"
     },
     "value": {
+      "timestamp": {
+        "kind": "string"
+      },
+      "level": {
+        "kind": "string"
+      },
       "source": {
         "kind": "string",
         "identifier": true
       },
-      "body": {
-        "kind": "json"
+      "LSP": {
+        "kind": "string"
+      },
+      "type": {
+        "kind": "string"
+      },
+      "number": {
+        "kind": "integer",
+        "hidden": true
       },
       "method": {
         "kind": "string"
       },
+      "id": {
+        "kind": "integer"
+      },
+      "body": {
+        "kind": "struct"
+      },
       "tail": {
-        "kind": "string"
+        "kind": "string",
+        "hidden": true
       }
     },
     "multiline": true,
     "sample": [
       {
-        "line": "[DEBUG][2025-02-15 13:42:31] ...m/lsp/client.lua:678 \"LSP[tsserver]\" \"client.request\" 3 \"textDocument/documentHighlight\" {  position = {    character = 17,    line = 6  },  textDocument = {    uri = \"file:///home/ogurczak/ws/mst/proj/server/src/routes/+page.server.ts\"  }} <function 1> 6"
+        "line": "[DEBUG][2025-02-15 13:42:31] ...m/lsp/client.lua:678 \"LSP[tsserver]\" \"client.request\" 3 \"textDocument/documentHighlight\" { id = 123,  position = {    character = 17,    line = 6  },  textDocument = {    uri = \"file:///home/ogurczak/ws/mst/proj/server/src/routes/+page.server.ts\"  }} <function 1> 6"
       }
     ]
   }
