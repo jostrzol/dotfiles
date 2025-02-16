@@ -3,6 +3,7 @@ local lspconfig = require("lspconfig")
 local configs = require("lspconfig.configs")
 
 vim.lsp.set_log_level('debug')
+vim.lsp.inlay_hint.enable(true)
 
 -- remove automatic lsp servers
 vim.list_extend(
