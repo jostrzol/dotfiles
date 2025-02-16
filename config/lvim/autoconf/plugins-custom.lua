@@ -34,11 +34,6 @@ lvim.plugins = {
     end
   },
   {
-    "ray-x/lsp_signature.nvim",
-    config = function() require("lsp_signature").on_attach() end,
-    event = "BufRead"
-  },
-  {
     "scalameta/nvim-metals",
     config = function()
       local lvim_lsp = require("lvim.lsp")

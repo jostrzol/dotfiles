@@ -13,9 +13,12 @@ lvim.lsp.buffer_mappings.normal_mode = {
   gd = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Goto definition" },
   gl = lvim.lsp.buffer_mappings.normal_mode["gl"],
   gu = { "<cmd>lua vim.lsp.buf.references()<cr>", "Goto references (usages)" },
-  ga = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show signature help" },
+  gs = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show signature help" },
   ["<C-.>"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action" },
   ["<space>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+}
+lvim.lsp.buffer_mappings.insert_mode = {
+  ["<C-S-Space>"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show signature help" },
 }
 
 -- DAP
