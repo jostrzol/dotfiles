@@ -233,6 +233,8 @@ lvim.plugins = {
               ["if"] = "@function.inner",
               ["ac"] = "@class.outer",
               ["ic"] = "@class.inner",
+              ["al"] = "@call.outer",
+              ["il"] = "@call.inner",
               ["ab"] = "@block.outer",
               ["ib"] = "@block.inner",
             },
