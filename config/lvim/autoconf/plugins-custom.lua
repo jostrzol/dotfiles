@@ -25,6 +25,29 @@ lvim.plugins = {
   {
     "mrcjkb/rustaceanvim",
     lazy = false, -- This plugin is already lazy
+    init = function()
+      vim.g.rustaceanvim = {
+        -- Plugin configuration
+        tools = {
+        },
+        -- LSP configuration
+        server = {
+          on_attach = function(client, bufnr)
+            -- Activate lvim's lsp configuration
+            local lsp_opts = require("lvim.lsp").get_common_opts()
+            lsp_opts.on_attach(client, bufnr)
+          end,
+          default_settings = {
+            -- rust-analyzer language server configuration
+            ['rust-analyzer'] = {
+            },
+          },
+        },
+        -- DAP configuration
+        dap = {
+        }
+      }
+    end
   },
   {
     "preservim/vim-markdown",
@@ -241,7 +264,7 @@ lvim.plugins = {
     -- for example
     opts = {
       -- if you want to enable the plugin
-      enabled = true,
+      enabled = false,
       -- template for the blame message, check the Message template section for
       -- more options
       message_template = " <date> • <summary> • <author> • <<sha>>",
@@ -263,6 +286,10 @@ lvim.plugins = {
           vim.api.nvim_del_autocmd(event.id)
         end,
       })
+      lvim.builtin.which_key.mappings["gm"] = {
+        function() vim.cmd("GitBlameToggle") end,
+        "Toggle Git Blame line",
+      }
     end,
   }
 }
