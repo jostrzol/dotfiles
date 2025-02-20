@@ -8,6 +8,7 @@ return {
   "AstroNvim/astrocore",
   ---@param opts AstroLSPOpts
   opts = function(_, opts)
+    ---@type AstroLSPOpts
     local local_opts = {
       -- Configure core features of AstroNvim
       features = {
@@ -17,6 +18,7 @@ return {
         diagnostics_modk = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
         highlighturl = true, -- highlight URLs at start
         notifications = true, -- enable notifications at start
+        signature_help = true,
       },
       -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
       diagnostics = {
@@ -37,6 +39,35 @@ return {
           -- configure global vim variables (vim.g)
           -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
           -- This can be found in the `lua/lazy_setup.lua` file
+        },
+      },
+
+      -- vim.api.nvim_create_user_command('Redir', function(ctx)
+      --   local lines = vim.split(vim.api.nvim_exec(ctx.args, true), '\n', { plain = true })
+      --   vim.cmd('enew')
+      --   vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+      --   vim.opt_local.modified = false
+      -- end, { nargs = '+', complete = 'command' })
+      commands = {
+        Redir = {
+          function(ctx)
+            local lines = vim.split(vim.api.nvim_exec(ctx.args, true), "\n", { plain = true })
+            vim.cmd "enew"
+            vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+            vim.opt_local.modified = false
+          end,
+          nargs = "+",
+          complete = "command",
+        },
+        LspClear = {
+          function(_)
+            local log_path = vim.fn.glob(vim.fn.stdpath "state" .. "/lsp.log")
+            local file, err = io.open(log_path, "w")
+            assert(file, err)
+
+            local _, err2 = file:write ""
+            assert(err2 == nil, err2)
+          end,
         },
       },
       -- Mappings can be configured through AstroCore as well.

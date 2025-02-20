@@ -17,6 +17,7 @@ return {
           desc = "ToggleTerm lazygit",
         }
 
+        ---@type AstroLSPOpts
         local opts_local = {
           mappings = {
             n = {

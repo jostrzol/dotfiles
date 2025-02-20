@@ -8,6 +8,7 @@ return {
   "AstroNvim/astrolsp",
   ---@param opts AstroLSPOpts
   opts = function(_, opts)
+    ---@type AstroLSPOpts
     local local_opts = {
       -- Configuration table of features provided by AstroLSP
       features = {
@@ -96,6 +97,9 @@ return {
         },
         v = {
           ["<M-f>"] = opts.mappings.v["<Leader>lf"],
+        },
+        i = {
+          ["<C-S-Space>"] = opts.mappings.n["gK"],
         },
       },
       -- A custom `on_attach` function to be run after the default `on_attach` function
