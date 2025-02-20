@@ -9,8 +9,10 @@ function config -d 'configure dotfiles'
     set -f file ""
 
     switch "$command"
-        case {l,}vim
+        case lvim
             set -f file "./config/lvim/autoconf/plugins-custom.lua"
+        case {n,}vim
+            set -f file "./config/nvim/lua/plugins/astrocore.lua"
         case fish
             set -f file "./config/fish/config.fish"
         case kitty
