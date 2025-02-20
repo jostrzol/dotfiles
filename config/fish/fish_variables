@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:lvim
-SETUVAR --export VISUAL:lvim
+SETUVAR --export EDITOR:nvim
+SETUVAR --export VISUAL:nvim
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/ogurczak/\x2elocal/share/z/data
