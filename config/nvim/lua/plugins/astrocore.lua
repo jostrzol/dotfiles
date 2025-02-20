@@ -31,6 +31,7 @@ return {
           spell = false, -- sets vim.opt.spell
           signcolumn = "yes", -- sets vim.opt.signcolumn to yes
           wrap = true, -- sets vim.opt.wrap
+          scrolloff = 5,
         },
         g = { -- vim.g.<key>
           -- configure global vim variables (vim.g)
@@ -48,6 +49,8 @@ return {
           -- navigate buffer tabs
           ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
           ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+          ["<C-M-h>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+          ["<C-M-l>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
 
           -- mappings seen under group name "Buffer"
           ["<Leader>bd"] = {
