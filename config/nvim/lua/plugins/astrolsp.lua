@@ -109,6 +109,29 @@ return {
         -- this would disable semanticTokensProvider for all clients
         -- client.server_capabilities.semanticTokensProvider = nil
       end,
+      commands = {
+        LspCapabilities = {
+          function(_)
+            local buffer = vim.api.nvim_get_current_buf()
+            ---@type (lsp.ServerCapabilities?)
+            local capabilities = {}
+            for _, client in pairs(vim.lsp.get_clients { bufnr = buffer }) do
+              capabilities = vim.tbl_deep_extend("force", capabilities, client.server_capabilities)
+            end
+            put(capabilities)
+          end,
+        },
+        LspLogClear = {
+          function(_)
+            local log_path = vim.fn.glob(vim.fn.stdpath "state" .. "/lsp.log")
+            local file, err = io.open(log_path, "w")
+            assert(file, err)
+
+            local _, err2 = file:write ""
+            assert(err2 == nil, err2)
+          end,
+        },
+      },
     }
 
     return vim.tbl_deep_extend("force", opts, local_opts)

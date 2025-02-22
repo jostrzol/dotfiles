@@ -6,7 +6,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
-  ---@param opts AstroLSPOpts
+  ---@param opts AstroCoreOpts
   opts = function(_, opts)
     ---@type AstroCoreOpts
     local local_opts = {
@@ -40,33 +40,20 @@ return {
           -- This can be found in the `lua/lazy_setup.lua` file
         },
       },
-
-      -- vim.api.nvim_create_user_command('Redir', function(ctx)
-      --   local lines = vim.split(vim.api.nvim_exec(ctx.args, true), '\n', { plain = true })
-      --   vim.cmd('enew')
-      --   vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
-      --   vim.opt_local.modified = false
-      -- end, { nargs = '+', complete = 'command' })
       commands = {
         Redir = {
           function(ctx)
-            local lines = vim.split(vim.api.nvim_exec(ctx.args, true), "\n", { plain = true })
-            vim.cmd "enew"
-            vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
-            vim.opt_local.modified = false
+            local result = vim.api.nvim_exec2(ctx.args, { output = true })
+            local lines = vim.split(result.output, "\n", { plain = true })
+            local buf = vim.api.nvim_create_buf(true, true)
+            vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+            vim.api.nvim_buf_set_name(buf, ctx.args)
+            local filetype = vim.filetype.match { buf = buf }
+            vim.api.nvim_set_option_value("filetype", filetype, { buf = buf })
+            vim.api.nvim_set_current_buf(buf)
           end,
           nargs = "+",
           complete = "command",
-        },
-        LspClear = {
-          function(_)
-            local log_path = vim.fn.glob(vim.fn.stdpath "state" .. "/lsp.log")
-            local file, err = io.open(log_path, "w")
-            assert(file, err)
-
-            local _, err2 = file:write ""
-            assert(err2 == nil, err2)
-          end,
         },
       },
       -- Mappings can be configured through AstroCore as well.

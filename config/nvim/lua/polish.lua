@@ -3,16 +3,17 @@
 -- fit in the normal config locations above can go here
 
 -- Set up custom filetypes
--- vim.filetype.add {
---   extension = {
---     foo = "fooscript",
---   },
---   filename = {
---     ["Foofile"] = "fooscript",
---   },
---   pattern = {
---     ["~/%.config/foo/.*"] = "fooscript",
---   },
--- }
+vim.filetype.add {
+  -- extension = {
+  --   foo = "fooscript",
+  -- },
+  filename = {
+    -- ["Foofile"] = "fooscript",
+    ["LspCapabilities"] = "lua",
+  },
+  -- pattern = {
+  --   ["~/%.config/foo/.*"] = "fooscript",
+  -- },
+}
 
 vim.api.nvim_create_autocmd("VimEnter", { command = "Neotree show" })
