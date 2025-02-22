@@ -87,6 +87,11 @@ return {
             desc = "Declaration of current symbol",
             cond = "textDocument/declaration",
           },
+          gu = {
+            function() vim.lsp.buf.references() end,
+            desc = "Usages",
+            cond = "textDocument/reference",
+          },
           ["<Leader>uY"] = {
             function() require("astrolsp.toggles").buffer_semantic_tokens() end,
             desc = "Toggle LSP semantic highlight (buffer)",
