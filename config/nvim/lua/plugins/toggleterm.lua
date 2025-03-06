@@ -4,7 +4,7 @@ return {
   specs = {
     {
       "AstroNvim/astrocore",
-      ---@param opts AstroLSPOpts
+      ---@param opts AstroCoreOpts
       opts = function(_, opts)
         local astro = require "astrocore"
         -- stolen from autocore/plugins/toggleterm.lua
@@ -17,7 +17,7 @@ return {
           desc = "ToggleTerm lazygit",
         }
 
-        ---@type AstroLSPOpts
+        ---@type AstroCoreOpts
         local opts_local = {
           mappings = {
             n = {
