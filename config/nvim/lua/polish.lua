@@ -11,9 +11,14 @@ vim.filetype.add {
     -- ["Foofile"] = "fooscript",
     ["LspCapabilities"] = "lua",
   },
-  -- pattern = {
-  --   ["~/%.config/foo/.*"] = "fooscript",
-  -- },
+  pattern = {
+    -- ["~/%.config/foo/.*"] = "fooscript",
+    [".*%.vscode/launch%.json"] = "jsonc",
+  },
 }
 
+-- Show NeoTree on startup
 vim.api.nvim_create_autocmd("VimEnter", { command = "Neotree show" })
+
+-- Lsp
+-- vim.lsp.set_log_level "DEBUG"
