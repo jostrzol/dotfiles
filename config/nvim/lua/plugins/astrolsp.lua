@@ -46,12 +46,27 @@ return {
       ---@diagnostic disable: missing-fields
       config = {
         -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+        yamlls = {
+          settings = {
+            yaml = {
+              schemas = {
+                ["https://json.schemastore.org/clang-format.json"] = "**/.clang-format",
+              },
+            },
+          },
+        },
         texlab = {
           settings = {
             texlab = {
               build = {
                 executable = "latexmk",
-                args = { "-aux-directory=.aux", "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                args = {
+                  "-aux-directory=.aux",
+                  "-pdf",
+                  "-interaction=nonstopmode",
+                  "-synctex=1",
+                  "%f",
+                },
                 onSave = true,
               },
             },
