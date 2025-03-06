@@ -92,6 +92,24 @@ return {
           ["<Leader>bh"] = opts.mappings.n["<Leader>bl"],
           ["<Leader>bl"] = opts.mappings.n["<Leader>br"],
           ["<Leader>br"] = false,
+
+          -- Move line up/down
+          ["<M-k>"] = { "<cmd>m -2<cr>", desc = "Move line up" },
+          ["<M-j>"] = { "<cmd>m +1<cr>", desc = "Move line down" },
+
+          -- Unbind home screen
+          ["<Leader>h"] = false,
+
+          -- Find in manpages (modified to include all sections)
+          ["<Leader>fm"] = {
+            function() require("telescope.builtin").man_pages { sections = { "ALL" } } end,
+            desc = "Find man",
+          },
+        },
+        v = {
+          -- Move lines up/down
+          ["<M-k>"] = { "<cmd>'<,'>m '<-2<cr>gv", desc = "Move lines up" },
+          ["<M-j>"] = { "<cmd>'<,'>m '>+1<cr>gv", desc = "Move lines down" },
         },
       },
     }
