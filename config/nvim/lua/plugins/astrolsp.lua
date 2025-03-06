@@ -46,6 +46,17 @@ return {
       ---@diagnostic disable: missing-fields
       config = {
         -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+        texlab = {
+          settings = {
+            texlab = {
+              build = {
+                executable = "latexmk",
+                args = { "-aux-directory=.aux", "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                onSave = true,
+              },
+            },
+          },
+        },
       },
       -- customize how language servers are attached
       handlers = {
@@ -99,12 +110,15 @@ return {
               return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
             end,
           },
+          -- Format
           ["<M-f>"] = opts.mappings.n["<Leader>lf"],
         },
         v = {
+          -- Format
           ["<M-f>"] = opts.mappings.v["<Leader>lf"],
         },
         i = {
+          -- Signature help
           ["<C-S-Space>"] = opts.mappings.n["gK"],
         },
       },
