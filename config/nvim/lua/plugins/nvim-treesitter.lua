@@ -5,6 +5,13 @@ return {
     { "windwp/nvim-ts-autotag" },
   },
   opts = {
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        node_incremental = "v",
+        node_decremental = "<M-V>",
+      },
+    },
     textobjects = {
       select = {
         keymaps = {
