@@ -72,6 +72,7 @@ return {
             },
           },
         },
+        pyright = { autostart = false },
       },
       -- customize how language servers are attached
       handlers = {
