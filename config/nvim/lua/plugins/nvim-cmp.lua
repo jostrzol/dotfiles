@@ -1,3 +1,5 @@
+---@module "cmp.types.cmp"
+
 ---@type LazyPluginSpec
 return {
   "hrsh7th/nvim-cmp",

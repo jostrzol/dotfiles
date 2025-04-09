@@ -33,6 +33,8 @@ return {
           signcolumn = "yes", -- sets vim.opt.signcolumn to yes
           wrap = true, -- sets vim.opt.wrap
           scrolloff = 5,
+          spelllang = "pl,en",
+          spellfile = vim.fn.stdpath "data" .. "/spell/pl.utf-8.add",
         },
         g = { -- vim.g.<key>
           -- configure global vim variables (vim.g)

@@ -9,7 +9,7 @@ return {
       enable = true,
       keymaps = {
         node_incremental = "v",
-        node_decremental = "<M-V>",
+        node_decremental = "<M-v>",
       },
     },
     textobjects = {

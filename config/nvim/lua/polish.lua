@@ -21,4 +21,4 @@ vim.filetype.add {
 vim.api.nvim_create_autocmd("VimEnter", { command = "Neotree show" })
 
 -- Lsp
--- vim.lsp.set_log_level "DEBUG"
+--vim.lsp.set_log_level "DEBUG"

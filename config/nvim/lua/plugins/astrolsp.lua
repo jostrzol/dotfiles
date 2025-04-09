@@ -40,12 +40,29 @@ return {
       },
       -- enable servers that you already have installed without mason
       servers = {
-        -- "pyright"
+        -- "pyright",
+        "zls",
+        -- "rust_analyzer",
       },
       -- customize language server configuration options passed to `lspconfig`
       ---@diagnostic disable: missing-fields
       config = {
         -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+        -- zls = {
+        --   cmd = { "zls", "--log-level", "debug" },
+        -- },
+        rust_analyzer = {
+          settings = {
+            ["rust-analyzer"] = {
+              server = {
+                extraEnv = {
+                  -- RUSTUP_TOOLCHAIN = "stable",
+                  -- CARGO_TARGET_DIR = "target_analyzer",
+                },
+              },
+            },
+          },
+        },
         yamlls = {
           settings = {
             yaml = {
