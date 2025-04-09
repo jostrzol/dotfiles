@@ -1,5 +1,5 @@
 set -a PATH "/usr/lib/rustup/bin/"
-set -a PATH "$HOME/.local/share/lvim/mason/bin"
+set -a PATH "$HOME/.local/share/nvim/mason/bin"
 set -a PATH "$HOME/.cargo/bin/"
 set -a PATH "$HOME/go/bin/"
 set -a PATH "$HOME/.local/bin/"
