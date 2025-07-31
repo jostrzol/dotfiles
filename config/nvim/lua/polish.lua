@@ -18,7 +18,7 @@ vim.filetype.add {
 }
 
 -- Show NeoTree on startup
-vim.api.nvim_create_autocmd("VimEnter", { command = "Neotree show" })
+-- vim.api.nvim_create_autocmd("VimEnter", { command = "Neotree show" })
 
 -- Lsp
---vim.lsp.set_log_level "DEBUG"
+-- vim.lsp.set_log_level "DEBUG"
