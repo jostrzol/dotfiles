@@ -76,6 +76,13 @@ return {
         texlab = {
           settings = {
             texlab = {
+              experimental = {
+                enumEnvironments = { "itemize" },
+              },
+              latexindent = {
+                modifyLineBreaks = true,
+                ["local"] = "latexindent.yaml",
+              },
               build = {
                 executable = "latexmk",
                 args = {
