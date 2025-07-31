@@ -107,6 +107,13 @@ return {
             function() require("telescope.builtin").man_pages { sections = { "ALL" } } end,
             desc = "Find man",
           },
+
+          ----- Remappings
+          -- Resize windows
+          ["<M-Up>"] = opts.mappings.n["<C-Up>"],
+          ["<M-Down>"] = opts.mappings.n["<C-Down>"],
+          ["<M-Left>"] = opts.mappings.n["<C-Left>"],
+          ["<M-Right>"] = opts.mappings.n["<C-Right>"],
         },
         v = {
           -- Move lines up/down
