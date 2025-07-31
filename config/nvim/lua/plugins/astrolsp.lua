@@ -42,7 +42,8 @@ return {
       servers = {
         -- "pyright",
         "zls",
-        -- "rust_analyzer",
+        "rust_analyzer",
+        "cmake",
       },
       -- customize language server configuration options passed to `lspconfig`
       ---@diagnostic disable: missing-fields
@@ -54,11 +55,11 @@ return {
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
-              server = {
-                extraEnv = {
-                  -- RUSTUP_TOOLCHAIN = "stable",
-                  -- CARGO_TARGET_DIR = "target_analyzer",
-                },
+              completion = { postfix = { enable = false } },
+              cargo = {
+                -- extraEnv = {
+                -- CARGO_TARGET_DIR = "target_analyzer",
+                -- },
               },
             },
           },
