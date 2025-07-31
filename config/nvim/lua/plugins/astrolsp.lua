@@ -144,15 +144,20 @@ return {
               return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
             end,
           },
+          -- #Remappings:
           -- Format
           ["<M-f>"] = opts.mappings.n["<Leader>lf"],
         },
         v = {
+          -- #Remappings:
           -- Format
           ["<M-f>"] = opts.mappings.v["<Leader>lf"],
         },
         i = {
-          -- Signature help
+          -- # Remappings
+          -- Format
+          ["<M-f>"] = opts.mappings.n["<Leader>lf"],
+          -- Function signature help
           ["<C-S-Space>"] = opts.mappings.n["gK"],
         },
       },
@@ -171,7 +176,7 @@ return {
             for _, client in pairs(vim.lsp.get_clients { bufnr = buffer }) do
               capabilities = vim.tbl_deep_extend("force", capabilities, client.server_capabilities)
             end
-            put(capabilities)
+            _G.put(capabilities)
           end,
         },
         LspLogClear = {
