@@ -5,6 +5,7 @@ return {
   opts = {
     keymaps = {
       useDefaults = true,
+      disabledDefaults = { "gw" },
     },
   },
 }
