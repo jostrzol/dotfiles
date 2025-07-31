@@ -1,7 +1,30 @@
+---@module "csvview"
+---
 ---@type LazyPluginSpec
 return {
   "hat0uma/csvview.nvim",
-  ---@module "csvview"
+  specs = {
+    {
+      "AstroNvim/astrocore",
+      ---@type AstroCoreOpts
+      opts = {
+        autocmds = {
+          csvview_enable = {
+            {
+              event = { "BufRead" },
+              desc = "Enable csvview.nvim on startup",
+              pattern = { "*.csv" },
+              callback = function(args)
+                vim.o.wrap = false
+                local cssview = require "csvview"
+                if not cssview.is_enabled(args.buf) then cssview.enable(args.buf) end
+              end,
+            },
+          },
+        },
+      },
+    },
+  },
   ---@type CsvView.Options
   opts = {
     parser = { comments = { "#", "//" } },
