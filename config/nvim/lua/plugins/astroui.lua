@@ -35,47 +35,5 @@ return {
       LSPLoading9 = "⠇",
       LSPLoading10 = "⠏",
     },
-    -- Configure status line components
-    status = {
-      -- Add texlab build status component
-      component = {
-        texlab_build_status = function()
-          local clients = vim.lsp.get_clients({ name = "texlab" })
-          if #clients == 0 or vim.bo.filetype ~= "tex" then
-            return ""
-          end
-          
-          -- Check if build is in progress by looking for latexmk process
-          local handle = io.popen("pgrep -f latexmk")
-          local result = handle:read("*a")
-          handle:close()
-          
-          if result and result ~= "" then
-            return "📄 Building..."
-          else
-            return ""
-          end
-        end,
-      },
-      -- Configure where the component appears in the status line
-      opts = {
-        statusline = {
-          -- Insert the texlab build status after the diagnostics component
-          {
-            static = {
-              texlab_status = function(self)
-                return require("astroui.status").component.texlab_build_status()
-              end,
-            },
-            {
-              provider = function(self) return self.texlab_status() end,
-              condition = function() return vim.bo.filetype == "tex" end,
-              hl = { fg = "yellow" },
-              { provider = " " }, -- spacing
-            },
-          },
-        },
-      },
-    },
   },
 }
