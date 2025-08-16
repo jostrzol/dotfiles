@@ -4,9 +4,9 @@
 
 -- Set up custom filetypes
 vim.filetype.add {
-  -- extension = {
-  --   foo = "fooscript",
-  -- },
+  extension = {
+    tex = "tex",
+  },
   filename = {
     -- ["Foofile"] = "fooscript",
     ["LspCapabilities"] = "lua",
