@@ -47,3 +47,5 @@
 [user]
 	email = kubaostrzolek@gmail.com
 	name = Jakub Ostrzołek
+[pull]
+	rebase = true
