@@ -29,3 +29,6 @@ abbr idea intellij-idea-ultimate-edition
 abbr zipd 'zip -r "$(basename "$PWD")"'
 abbr hist 'history --show-time="%F %T "'
 abbr task go-task
+
+# See: https://bbs.archlinux.org/viewtopic.php?pid=1856463#p1856463
+set --erase LC_ALL
