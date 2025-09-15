@@ -18,13 +18,29 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "stylua", "sqlfluff" },
+      automatic_installation = false,
+      ensure_installed = { "stylua", "sqlfluff", "markdownlint", "prettierd", "prettier" },
       handlers = {
         sqlfluff = function()
           local null_ls = require "null-ls"
 
           null_ls.register(null_ls.builtins.diagnostics.sqlfluff)
           null_ls.register(null_ls.builtins.formatting.sqlfluff)
+        end,
+        markdownlint = function()
+          local null_ls = require "null-ls"
+
+          null_ls.register(null_ls.builtins.diagnostics.markdownlint.with {
+            extra_filetypes = { "quarto" },
+            extra_args = { "--disable", "MD013" },
+          })
+        end,
+        prettierd = function()
+          local null_ls = require "null-ls"
+
+          null_ls.register(null_ls.builtins.formatting.prettier.with {
+            filetypes = { "markdown" },
+          })
         end,
       },
     },
@@ -37,6 +53,12 @@ return {
         "python",
         -- add more arguments for adding more debuggers
       },
+    },
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    opts = {
+      -- debug = true, -- switch
     },
   },
 }

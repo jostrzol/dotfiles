@@ -18,5 +18,7 @@ return {
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.test.neotest" },
+  -- { import = "astrocommunity.code-runner.molten-nvim" },
+  { import = "astrocommunity.pack.quarto" },
   -- import/override with your plugins folder
 }

@@ -52,6 +52,9 @@ return {
         -- zls = {
         --   cmd = { "zls", "--log-level", "debug" },
         -- },
+        marksman = {
+          filetypes = { "markdown", "quarto" },
+        },
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
@@ -98,6 +101,9 @@ return {
           },
         },
         pyright = { autostart = false },
+        ruff = {
+          autostart = function(bufnr) return vim.bo[bufnr].filetype ~= "quarto" end,
+        },
       },
       -- customize how language servers are attached
       handlers = {
