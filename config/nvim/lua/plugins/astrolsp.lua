@@ -53,6 +53,9 @@ return {
         -- zls = {
         --   cmd = { "zls", "--log-level", "debug" },
         -- },
+        tailwindcss = {
+          autostart = false,
+        },
         marksman = {
           filetypes = { "markdown", "quarto" },
         },
