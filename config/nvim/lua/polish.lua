@@ -14,6 +14,7 @@ vim.filetype.add {
   pattern = {
     -- ["~/%.config/foo/.*"] = "fooscript",
     [".*%.vscode/launch%.json"] = "jsonc",
+    ["%.env%..*"] = "sh",
   },
 }
 
