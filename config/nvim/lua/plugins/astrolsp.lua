@@ -59,19 +59,10 @@ return {
           settings = {
             ["rust-analyzer"] = {
               completion = { postfix = { enable = false } },
+              check = { command = "check", extraArgs = {} },
               cargo = {
-                -- extraEnv = {
-                -- CARGO_TARGET_DIR = "target_analyzer",
-                -- },
-              },
-            },
-          },
-        },
-        yamlls = {
-          settings = {
-            yaml = {
-              schemas = {
-                ["https://json.schemastore.org/clang-format.json"] = "**/.clang-format",
+                extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev" },
+                extraArgs = { "--profile", "rust-analyzer" },
               },
             },
           },
