@@ -114,11 +114,34 @@ return {
           ["<M-Down>"] = opts.mappings.n["<C-Down>"],
           ["<M-Left>"] = opts.mappings.n["<C-Left>"],
           ["<M-Right>"] = opts.mappings.n["<C-Right>"],
+          -- Format
+          ["<M-f>"] = {
+            function() vim.lsp.buf.format(require("astrolsp").format_opts) end,
+            desc = "Format buffer",
+          },
+          -- ["<M-f>"] = { function() require("conform").format { async = true } end, desc = "Format buffer" },
         },
         v = {
           -- Move lines up/down
           ["<M-k>"] = { "<cmd>'<,'>m '<-2<cr>gv", desc = "Move lines up" },
           ["<M-j>"] = { "<cmd>'<,'>m '>+1<cr>gv", desc = "Move lines down" },
+
+          ----- Remappings
+          -- Format
+          ["<M-f>"] = {
+            function() vim.lsp.buf.format(require("astrolsp").format_opts) end,
+            desc = "Format buffer",
+          },
+          -- ["<M-f>"] = { function() require("conform").format { async = true } end, desc = "Format buffer" },
+        },
+        i = {
+          ----- Remappings
+          -- Format
+          ["<M-f>"] = {
+            function() vim.lsp.buf.format(require("astrolsp").format_opts) end,
+            desc = "Format buffer",
+          },
+          -- ["<M-f>"] = { function() require("conform").format { async = true } end, desc = "Format buffer" },
         },
       },
     }

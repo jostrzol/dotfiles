@@ -152,19 +152,9 @@ return {
               return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
             end,
           },
-          ----- Remappings
-          -- Format
-          ["<M-f>"] = opts.mappings.n["<Leader>lf"],
-        },
-        v = {
-          ----- Remappings
-          -- Format
-          ["<M-f>"] = opts.mappings.v["<Leader>lf"],
         },
         i = {
           ----- Remappings
-          -- Format
-          ["<M-f>"] = opts.mappings.n["<Leader>lf"],
           -- Function signature help
           ["<C-S-Space>"] = opts.mappings.n["gK"],
         },

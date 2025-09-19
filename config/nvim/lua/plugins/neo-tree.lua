@@ -17,6 +17,17 @@ return {
     },
   },
   opts = {
+    buffers = {
+      -- TODO: this doesn't keep neo-tree from jumping around when switching
+      -- buffers. Fix it.
+      follow_current_file = {
+        -- This will find and focus the file in the active buffer every time
+        -- the current file is changed while the tree is open.
+        enabled = false,
+        -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+        leave_dirs_open = true,
+      },
+    },
     filesystem = {
       filtered_items = {
         visible = false,
