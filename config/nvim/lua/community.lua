@@ -21,4 +21,5 @@ return {
   -- { import = "astrocommunity.code-runner.molten-nvim" },
   { import = "astrocommunity.pack.quarto" },
   -- import/override with your plugins folder
+  { import = "astrocommunity.keybinding.hydra-nvim" },
 }
