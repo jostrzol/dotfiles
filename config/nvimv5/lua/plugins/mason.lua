@@ -2,63 +2,49 @@
 
 ---@type LazySpec
 return {
-  -- use mason-lspconfig to configure LSP installations
+  -- use mason-tool-installer for automatically installing Mason packages
   {
-    "williamboman/mason-lspconfig.nvim",
-    -- overrides `require("mason-lspconfig").setup(...)`
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    -- overrides `require("mason-tool-installer").setup(...)`
     opts = {
+      -- Make sure to use the names found in `:Mason`
       ensure_installed = {
-        "lua_ls",
-        -- add more arguments for adding more language servers
-      },
-    },
-  },
-  -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
-  {
-    "jay-babu/mason-null-ls.nvim",
-    -- overrides `require("mason-null-ls").setup(...)`
-    opts = {
-      automatic_installation = false,
-      ensure_installed = { "stylua", "sqlfluff", "markdownlint", "prettierd", "prettier" },
-      handlers = {
-        sqlfluff = function()
-          local null_ls = require "null-ls"
+        -- install language servers
+        "lua-language-server",
 
-          null_ls.register(null_ls.builtins.diagnostics.sqlfluff)
-          null_ls.register(null_ls.builtins.formatting.sqlfluff)
-        end,
-        markdownlint = function()
-          local null_ls = require "null-ls"
+        -- install formatters
+        "stylua",
+        "sqlfluff",
+        "markdownlint",
+        "prettierd",
+        "prettier",
 
-          null_ls.register(null_ls.builtins.diagnostics.markdownlint.with {
-            extra_filetypes = { "quarto" },
-            extra_args = { "--disable", "MD013" },
-          })
-        end,
-        prettierd = function()
-          local null_ls = require "null-ls"
+        -- install debuggers
+        "debugpy",
 
-          null_ls.register(null_ls.builtins.formatting.prettier.with {
-            filetypes = { "markdown" },
-          })
-        end,
-      },
-    },
-  },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
-    opts = {
-      ensure_installed = {
-        "python",
-        -- add more arguments for adding more debuggers
+        -- install any other package
+        "tree-sitter-cli",
       },
     },
   },
   {
     "nvimtools/none-ls.nvim",
-    opts = {
-      -- debug = true, -- switch
-    },
+    opts = function()
+      local null_ls = require "null-ls"
+      return {
+        sources = {
+          -- Diagnostics/linters
+          null_ls.builtins.diagnostics.markdownlint.with {
+            extra_filetypes = { "quarto" },
+            extra_args = { "--disable", "MD013" },
+          },
+          -- Formatters
+          null_ls.builtins.formatting.prettier.with {
+            filetypes = { "markdown" },
+          },
+        },
+        -- debug = true, -- switch
+      }
+    end,
   },
 }
