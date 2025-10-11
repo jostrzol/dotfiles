@@ -1,0 +1,29 @@
+{
+  "spec": {
+    "prefix": "spec",
+    "body": [
+      "---@type LazySpec",
+      "return {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Lazy spec"
+  },
+  "keymaps": {
+    "prefix": "keymaps",
+    "body": [
+      "specs = {",
+      "\t\"AstroNvim/astrocore\",",
+      "\t---@type AstroCoreOpts",
+      "\topts = {",
+      "\t\tmappings = {",
+      "\t\t\tn = {",
+      "\t\t\t\t[\"<Leader>$1\"] = { function() $0 end, desc = \"${2:Edit Snippets}\" },",
+      "\t\t\t},",
+      "\t\t},",
+      "\t},",
+      "},"
+    ],
+    "description": "Lazy spec"
+  }
+}
