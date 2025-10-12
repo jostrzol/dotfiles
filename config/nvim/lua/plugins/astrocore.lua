@@ -102,11 +102,8 @@ return {
           -- Unbind home screen
           ["<Leader>h"] = false,
 
-          -- Find in manpages (modified to include all sections)
-          ["<Leader>fm"] = {
-            function() require("telescope.builtin").man_pages { sections = { "ALL" } } end,
-            desc = "Find man",
-          },
+          -- Find diagnostics
+          ["<Leader>fd"] = opts.mappings.n["<Leader>lD"],
 
           ----- Remappings
           -- Resize windows
