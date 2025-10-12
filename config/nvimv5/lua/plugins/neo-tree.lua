@@ -1,5 +1,3 @@
-local telescope = require "telescope.builtin"
-
 ---@type LazyPluginSpec
 return {
   "nvim-neo-tree/neo-tree.nvim",
@@ -40,14 +38,17 @@ return {
           ["<Leader>fw"] = {
             function(state)
               local node = state.tree:get_node()
-              telescope.live_grep { search_dirs = { node.path } }
+              require("snacks").picker.grep { dirs = { node.path } }
             end,
             desc = "Find words under node",
           },
           ["<Leader>ff"] = {
             function(state)
               local node = state.tree:get_node()
-              telescope.find_files { search_dirs = { node.path } }
+              require("snacks").picker.files {
+                hidden = vim.tbl_get((vim.uv or vim.loop).fs_stat ".git" or {}, "type") == "directory",
+                dirs = { node.path },
+              }
             end,
             desc = "Find files under node",
           },
