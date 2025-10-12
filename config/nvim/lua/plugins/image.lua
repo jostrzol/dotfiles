@@ -1,3 +1,5 @@
+---@module "which-key"
+
 ---@type LazyPluginSpec
 return {
   "3rd/image.nvim",
@@ -18,7 +20,7 @@ return {
         filetypes = { "norg" },
       },
       typst = {
-        enabled = true,
+        enabled = false,
         filetypes = { "typst" },
       },
       html = {

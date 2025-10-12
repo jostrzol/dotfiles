@@ -13,6 +13,7 @@ return {
   { import = "astrocommunity.pack.kotlin" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.cs" },
+  { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.editing-support.vim-visual-multi" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
