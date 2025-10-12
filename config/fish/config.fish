@@ -6,7 +6,7 @@ bind \e\[3\;5~ kill-word
 bind \b backward-kill-word
 # search on tab
 bind \t complete-and-search
-bind -k btab complete
+bind \t\r complete
 
 starship init fish | source
 pyenv init - | source
