@@ -99,6 +99,12 @@ return {
         ruff = {
           autostart = function(bufnr) return vim.bo[bufnr].filetype ~= "quarto" end,
         },
+        tinymist = {
+          settings = {
+            exportPdf = "onSave",
+            -- outputPath = "$root/target/$dir/$name",
+          },
+        },
       },
       -- customize how language servers are attached
       handlers = {
@@ -164,6 +170,25 @@ return {
       on_attach = function(client, bufnr)
         -- this would disable semanticTokensProvider for all clients
         -- client.server_capabilities.semanticTokensProvider = nil
+
+        -- Handle tinymist Code lens commands
+        if client.name == "tinymist" then
+          vim.lsp.commands["tinymist.runCodeLens"] = function(command)
+            local id = command.arguments and command.arguments[1] or ""
+            if id == "export-pdf" then
+              vim.lsp.buf_request(bufnr, "workspace/executeCommand", {
+                command = "tinymist.exportPdf",
+                arguments = { vim.api.nvim_buf_get_name(bufnr) },
+              })
+            elseif id == "preview" then
+              vim.cmd ":TypstPreview"
+            else
+              local command_str = vim.inspect(command)
+              local msg = string.format("Invalid code lens: '%s', command:\n%s", id, command_str)
+              vim.notify(msg, "error")
+            end
+          end
+        end
       end,
       commands = {
         LspCapabilities = {
