@@ -17,7 +17,8 @@ return {
         "sqlfluff",
         "markdownlint",
         "prettierd",
-        "prettier",
+        -- "prettier",
+        "black",
 
         -- install debuggers
         "debugpy",
@@ -34,14 +35,14 @@ return {
       return {
         sources = {
           -- Diagnostics/linters
-          null_ls.builtins.diagnostics.markdownlint.with {
-            extra_filetypes = { "quarto" },
-            extra_args = { "--disable", "MD013" },
-          },
+          -- null_ls.builtins.diagnostics.markdownlint.with {
+          --   extra_filetypes = { "quarto" },
+          --   extra_args = { "--disable", "MD013" },
+          -- },
           -- Formatters
-          null_ls.builtins.formatting.prettier.with {
-            filetypes = { "markdown" },
-          },
+          -- null_ls.builtins.formatting.prettier.with {
+          --   filetypes = { "markdown" },
+          -- },
         },
         -- debug = true, -- switch
       }
