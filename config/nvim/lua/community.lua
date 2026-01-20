@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.pack.cs" },
   { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.pack.dart" },
+  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.editing-support.vim-visual-multi" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
