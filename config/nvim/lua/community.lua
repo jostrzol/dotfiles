@@ -25,4 +25,5 @@ return {
   { import = "astrocommunity.pack.quarto" },
   -- import/override with your plugins folder
   { import = "astrocommunity.keybinding.hydra-nvim" },
+  { import = "astrocommunity.debugging.nvim-dap-view" },
 }
