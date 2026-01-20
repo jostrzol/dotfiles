@@ -23,3 +23,36 @@ vim.filetype.add {
 
 -- Lsp
 -- vim.lsp.set_log_level "DEBUG"
+
+-- Dap
+require("dap").adapters["pwa-node"] = {
+  type = "server",
+  host = "127.0.0.1",
+  port = "${port}",
+  executable = {
+    command = "node",
+    args = {
+      vim.fn.expand "$MASON/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+      "${port}",
+      "127.0.0.1",
+    },
+  },
+}
+require("dap").adapters["pwa-chrome"] = {
+  -- use nvim-dap-vscode-js's pwa-chrome debug adapter
+  type = "server",
+  request = "launch",
+  -- name of the debug action
+  name = "Launch Chrome to debug client side code",
+  -- default vite dev server url
+  url = "http://localhost:5173",
+  -- for TypeScript/Svelte
+  sourceMaps = true,
+  webRoot = "${workspaceFolder}/src",
+  protocol = "inspector",
+  port = 9222,
+  -- skip files from vite's hmr
+  skipFiles = { "**/node_modules/**/*", "**/@vite/*", "**/src/client/*", "**/src/*" },
+}
+
+-- require('dap').set_log_level('TRACE')
