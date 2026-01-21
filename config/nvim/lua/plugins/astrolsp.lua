@@ -158,6 +158,21 @@ return {
               return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
             end,
           },
+          -- Hover
+          vim.keymap.set("n", "K", function()
+            local session = require("dap").session()
+            if session == nil or session.stopped_thread_id == nil then
+              vim.lsp.buf.hover()
+              return
+            end
+
+            local hover = require("dap.ui.widgets").hover()
+
+            vim.keymap.set("n", "K", function()
+              vim.api.nvim_win_close(hover.win, true)
+              vim.lsp.buf.hover()
+            end, { buffer = hover.buf })
+          end),
         },
         i = {
           ----- Remappings
