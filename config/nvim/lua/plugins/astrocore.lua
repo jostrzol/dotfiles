@@ -24,6 +24,32 @@ return {
         virtual_text = true,
         underline = true,
       },
+      -- Configure global auto commands to add
+      autocmds = {
+        -- first key is the `augroup` to add the auto commands to (:h augroup)
+        quit_on_close = {
+          -- list of auto commands to set
+          {
+            -- events to trigger
+            event = { "QuitPre" },
+            -- the rest of the autocmd options (:h nvim_create_autocmd)
+            desc = "Quit if all other windows are not essential",
+            callback = function(args)
+              for _, win in ipairs(vim.api.nvim_list_wins()) do
+                local buf = vim.api.nvim_win_get_buf(win)
+                if buf ~= args.buf then
+                  local ft = vim.bo[buf].filetype
+
+                  local is_non_essential = ft:match "snacks" or ft:match "dap" or ft == "neo-tree"
+                  if not is_non_essential then return end
+                end
+              end
+
+              vim.cmd.qall()
+            end,
+          },
+        },
+      },
       -- vim options can be configured here
       options = {
         opt = { -- vim.opt.<key>
