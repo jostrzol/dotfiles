@@ -35,17 +35,23 @@ return {
             -- the rest of the autocmd options (:h nvim_create_autocmd)
             desc = "Quit if all other windows are not essential",
             callback = function(args)
+              if vim.g.quit_on_close_running then return end
+              vim.g.quit_on_close_running = true
+
               for _, win in ipairs(vim.api.nvim_list_wins()) do
                 local buf = vim.api.nvim_win_get_buf(win)
                 if buf ~= args.buf then
                   local ft = vim.bo[buf].filetype
 
                   local is_non_essential = ft:match "snacks" or ft:match "dap" or ft == "neo-tree"
-                  if not is_non_essential then return end
+                  if not is_non_essential then
+                    vim.g.quit_on_close_running = false
+                    return
+                  end
                 end
               end
 
-              vim.cmd.qall()
+              vim.schedule(function() vim.cmd.qall() end)
             end,
           },
         },
