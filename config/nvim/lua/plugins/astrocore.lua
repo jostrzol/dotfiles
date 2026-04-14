@@ -137,6 +137,9 @@ return {
           -- Find diagnostics
           ["<Leader>fd"] = opts.mappings.n["<Leader>lD"],
 
+          -- Git conflicts to quickfix
+          ["<Leader>gx"] = { ":GitConflictListQf<CR>", desc = "Conflicts (quickfix)" },
+
           ----- Remappings
           -- Resize windows
           ["<M-Up>"] = opts.mappings.n["<C-Up>"],

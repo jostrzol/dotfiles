@@ -18,11 +18,11 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.editing-support.vim-visual-multi" },
   { import = "astrocommunity.motion.nvim-surround" },
-  { import = "astrocommunity.quickfix.nvim-bqf" },
+  -- { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.test.neotest" },
   -- { import = "astrocommunity.code-runner.molten-nvim" },
-  { import = "astrocommunity.pack.quarto" },
+  -- { import = "astrocommunity.pack.quarto" },
   -- import/override with your plugins folder
   { import = "astrocommunity.keybinding.hydra-nvim" },
   { import = "astrocommunity.debugging.nvim-dap-view" },

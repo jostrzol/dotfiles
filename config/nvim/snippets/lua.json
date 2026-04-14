@@ -18,7 +18,7 @@
       "\topts = {",
       "\t\tmappings = {",
       "\t\t\tn = {",
-      "\t\t\t\t[\"<Leader>$1\"] = { function() $0 end, desc = \"${2:Edit Snippets}\" },",
+      "\t\t\t\t[\"<Leader>$1\"] = { function() $0 end, desc = \"${2:Description}\" },",
       "\t\t\t},",
       "\t\t},",
       "\t},",
