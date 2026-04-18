@@ -49,16 +49,15 @@ return {
       -- customize language server configuration options passed to `lspconfig`
       ---@diagnostic disable: missing-fields
       config = {
+        -- defaults
+        ["*"] = {
+          capabilities = {},
+          flags = {},
+        },
         -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
         -- zls = {
         --   cmd = { "zls", "--log-level", "debug" },
         -- },
-        tailwindcss = {
-          autostart = false,
-        },
-        marksman = {
-          filetypes = { "markdown", "quarto" },
-        },
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
@@ -96,15 +95,7 @@ return {
           },
         },
         pyright = { autostart = false },
-        ruff = {
-          autostart = function(bufnr) return vim.bo[bufnr].filetype ~= "quarto" end,
-        },
-        tinymist = {
-          settings = {
-            exportPdf = "onSave",
-            -- outputPath = "$root/target/$dir/$name",
-          },
-        },
+        tinymist = { settings = { exportPdf = "onSave" } },
       },
       -- customize how language servers are attached
       handlers = {
