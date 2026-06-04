@@ -29,6 +29,15 @@ return {
     },
   },
   {
+    "williamboman/mason-lspconfig.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = vim.tbl_filter(
+        function(server) return server ~= "basedpyright" and server ~= "pyrefly" end,
+        opts.ensure_installed or {}
+      )
+    end,
+  },
+  {
     "nvimtools/none-ls.nvim",
     opts = function()
       local null_ls = require "null-ls"
