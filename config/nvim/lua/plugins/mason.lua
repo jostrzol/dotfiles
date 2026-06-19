@@ -13,11 +13,9 @@ return {
         "lua-language-server",
 
         -- install formatters
-        "stylua",
         "sqlfluff",
         "markdownlint",
         "prettierd",
-        -- "prettier",
         "black",
 
         -- install debuggers
