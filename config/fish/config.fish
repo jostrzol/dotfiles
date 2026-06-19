@@ -5,6 +5,7 @@ end
 bind \e\[3\;5~ kill-word
 bind \b backward-kill-word
 
+fzf --fish | source
 starship init fish | source
 pyenv init - | source
 
